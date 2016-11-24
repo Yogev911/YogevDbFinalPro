@@ -15,6 +15,14 @@ namespace YogevDbShenkar
         public Form1()
         {
             InitializeComponent();
+            //  DBobj.AddTable();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataBaseConnect DBobj = new DataBaseConnect();
+
         }
     }
 }
