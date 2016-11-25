@@ -27,9 +27,13 @@ namespace YogevDbShenkar
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = "DROP TABLE Yotam_kfitz";
-            MySqlCommand cmd = new MySqlCommand(query, DBobj.connection);
-            cmd.ExecuteNonQuery();
+            if (DBobj.OpenConnection() == true)
+            {
+                string query = "DROP TABLE nir_zain_kfitz";
+                MySqlCommand cmd = new MySqlCommand(query, DBobj.connection);
+                cmd.ExecuteNonQuery();
+                DBobj.CloseConnection();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -75,7 +79,7 @@ namespace YogevDbShenkar
             }
         }
 
-        private bool OpenConnection()
+        public bool OpenConnection()
         {
             try
             {
@@ -102,7 +106,7 @@ namespace YogevDbShenkar
             }
         }
 
-        private bool CloseConnection()
+        public bool CloseConnection()
         {
             try
             {
@@ -118,7 +122,7 @@ namespace YogevDbShenkar
 
         public void AddTable()
         {
-            string query = "CREATE TABLE IF NOT EXISTS Yotam_kfitz(id int NOT NULL AUTO_INCREMENT, first varchar(255), last varchar(255),PRIMARY KEY(id))";
+            string query = "CREATE TABLE IF NOT EXISTS nir_zain_kfitz1(id int NOT NULL AUTO_INCREMENT, first varchar(255), last varchar(255),PRIMARY KEY(id))";
 
             //open connection
             if (this.OpenConnection() == true)
