@@ -57,14 +57,47 @@ namespace YogevDbShenkar
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string Insert1 = "INSERT INTO rooms (room_number,building,floor)VALUES ('247','Fernik','3')";
-            string Insert2 = "INSERT INTO lecturers (id, first_name, last_name,phone_number,address)VALUES ('305166860','Yogev','Heskia','0528282663','Ehud Manor 4 Beer Yaakov')";
-            string Insert3 = "INSERT INTO courses (course_number,name,year,semester,hours)VALUES ('100','Automate','3','1','3')";
-            string Insert4 = "INSERT INTO schedule (course_number,id,room_number,day,hour)VALUES ('100','305166860','247','1','16:00')";
-            DBobj.InsertInto(Insert1);
-            DBobj.InsertInto(Insert2);
-            DBobj.InsertInto(Insert3);
-            DBobj.InsertInto(Insert4);
+            int i = 0
+
+            string[] ARoom_number = new string[10]      { "247"     , "246"     , "204"     , "123"     , "435"     , "62"      , "345"     , "835"     , "124"     ,"2104"     };
+            string[] ABuilding = new string[10]         { "Fernik"  , "Fernik"  , "Mitchel" , "Fernik"  , "Mitchel" , "Fernik"  , "Mitchel" , "Mitchel" , "Fernik"  , "Mitchel" };
+            string[] AFloor = new string[10]            { "1"       , "1"       , "3"       , "5"       , "0"       , "0"       , "12"      , "5"       , "2"       , "23"    };
+            for (i = 0; i < 10; i++)
+            {
+                DBobj.InsertInto(String.Format("INSERT INTO rooms (room_number,building,floor)VALUES ('{0}','{1}','{2}')", ARoom_number[i], ABuilding[i], AFloor[i]));
+            }
+
+            string[] Bid = new string[10] { "247", "246", "204", "123", "435", "62", "345", "835", "124", "2104" };
+            string[] Bfirst_name = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            string[] Blast_name = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            string[] Bphone_number = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            string[] Baddress = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            for (i = 0; i < 10; i++)
+            {
+                DBobj.InsertInto(String.Format("INSERT INTO lecturers (id, first_name, last_name,phone_number,address)VALUES ('{0}','{1}','{2}','{3}','{4}')", Bid[i], Bfirst_name[i], Blast_name[i], Bphone_number[i], Baddress[i]));
+            }
+
+
+            string[] Ccourse_number = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            string[] Cname = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            string[] Cyear = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            string[] Csemester = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            string[] Chours = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            for (i = 0; i < 10; i++)
+            {
+                DBobj.InsertInto(String.Format("INSERT INTO courses (course_number,name,year,semester,hours)VALUES ('{0}','{1}','{2}','{3}','{4}')", Ccourse_number[i], Cname[i], Cyear[i], Csemester[i], Chours[i]));
+            }
+
+
+            string[] Dcourse_number = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            string[] Did = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            string[] Droom_number = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            string[] Dday = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            string[] Dhour = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+            for (i = 0; i < 10; i++)
+            {
+                DBobj.InsertInto(String.Format("INSERT INTO schedule (course_number,id,room_number,day,hour)VALUES ('{0}','{1}','{2}','{3}','{4}')", Dcourse_number[i], Did[i], Droom_number[i], Dday[i], Dhour[i]));
+            }
         }
     }
 
