@@ -29,14 +29,16 @@ namespace YogevDbShenkar
         {
             if (DBobj.OpenConnection() == true)
             {
-                string query;
-                MySqlCommand cmd;
+                string Drop1 = "DROP TABLE rooms";
+                string Drop2 = "DROP TABLE lecturers";
+                string Drop3 = "DROP TABLE courses";
+                string Drop4 = "DROP TABLE schedule";
 
-                query = "DROP TABLE nullsssss";
-                cmd = new MySqlCommand(query, DBobj.connection);
-                cmd.ExecuteNonQuery();
+                DBobj.DropTable(Drop1);
+                DBobj.DropTable(Drop2);
+                DBobj.DropTable(Drop3);
+                DBobj.DropTable(Drop4);
 
-                
 
             }
         }
@@ -51,6 +53,18 @@ namespace YogevDbShenkar
             DBobj.AddTable(Table2);
             DBobj.AddTable(Table3);
             DBobj.AddTable(Table4);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string Insert1 = "INSERT INTO rooms (room_number,building,floor)VALUES ('247','Fernik','3')";
+            string Insert2 = "INSERT INTO lecturers (id, first_name, last_name,phone_number,address)VALUES ('305166860','Yogev','Heskia','0528282663','Ehud Manor 4 Beer Yaakov')";
+            string Insert3 = "INSERT INTO courses (course_number,name,year,semester,hours)VALUES ('100','Automate','3','1','3')";
+            string Insert4 = "INSERT INTO schedule (course_number,id,room_number,day,hour)VALUES ('100','305166860','247','1','16:00')";
+            DBobj.InsertInto(Insert1);
+            DBobj.InsertInto(Insert2);
+            DBobj.InsertInto(Insert3);
+            DBobj.InsertInto(Insert4);
         }
     }
 
@@ -132,6 +146,25 @@ namespace YogevDbShenkar
             }
         }
 
+        public void DropTable(string query)
+        {
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+            }
+        }
+
+        public void InsertInto(string query)
+        {
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+            }
+        }
         public void AddTable(string TableName)
         {
             //string query = string.Format("CREATE TABLE IF NOT EXISTS {0}(id int NOT NULL AUTO_INCREMENT, first varchar(255), last varchar(255),PRIMARY KEY(id))",TableName);
