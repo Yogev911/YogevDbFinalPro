@@ -29,16 +29,28 @@ namespace YogevDbShenkar
         {
             if (DBobj.OpenConnection() == true)
             {
-                string query = "DROP TABLE nir_zain_kfitz";
-                MySqlCommand cmd = new MySqlCommand(query, DBobj.connection);
+                string query;
+                MySqlCommand cmd;
+
+                query = "DROP TABLE nullsssss";
+                cmd = new MySqlCommand(query, DBobj.connection);
                 cmd.ExecuteNonQuery();
-                DBobj.CloseConnection();
+
+                
+
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DBobj.AddTable();
+            string Table1 = "CREATE TABLE IF NOT EXISTS rooms(room_number int, building varchar(255), floor int,PRIMARY KEY(room_number))";
+            string Table2 = "CREATE TABLE IF NOT EXISTS lecturers(id int, first_name varchar(255), last_name varchar(255),phone_number varchar(255),address varchar(255),PRIMARY KEY(id))";
+            string Table3 = "CREATE TABLE IF NOT EXISTS courses(course_number int, name varchar(255), year int,semester int,hours int, PRIMARY KEY(course_number))";
+            string Table4 = "CREATE TABLE IF NOT EXISTS schedule(course_number int, id int, room_number int,day int,hour int,PRIMARY KEY(course_number,id,room_number,day,hour))";
+            DBobj.AddTable(Table1);
+            DBobj.AddTable(Table2);
+            DBobj.AddTable(Table3);
+            DBobj.AddTable(Table4);
         }
     }
 
@@ -120,15 +132,14 @@ namespace YogevDbShenkar
             }
         }
 
-        public void AddTable()
+        public void AddTable(string TableName)
         {
-            string query = "CREATE TABLE IF NOT EXISTS nir_zain_kfitz1(id int NOT NULL AUTO_INCREMENT, first varchar(255), last varchar(255),PRIMARY KEY(id))";
-
+            //string query = string.Format("CREATE TABLE IF NOT EXISTS {0}(id int NOT NULL AUTO_INCREMENT, first varchar(255), last varchar(255),PRIMARY KEY(id))",TableName);
             //open connection
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(TableName, connection);
 
                 //Execute command
                 cmd.ExecuteNonQuery();
