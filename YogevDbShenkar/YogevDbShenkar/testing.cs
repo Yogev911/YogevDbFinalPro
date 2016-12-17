@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace YogevDbShenkar
-{
-    public partial class Form1 : Form
+{/*
+    public partial class Form331 : Form33
     {
         private DataBaseConnect DBobj = new DataBaseConnect();
 
@@ -60,9 +55,9 @@ namespace YogevDbShenkar
         {
             int i = 0;
 
-            string[] ARoom_number = new string[10]      { "247"     , "246"     , "204"     , "123"     , "435"     , "62"      , "345"     , "835"     , "124"     ,"2104"     };
-            string[] ABuilding = new string[10]         { "Fernik"  , "Fernik"  , "Mitchel" , "Fernik"  , "Mitchel" , "Fernik"  , "Mitchel" , "Mitchel" , "Fernik"  , "Mitchel" };
-            string[] AFloor = new string[10]            { "1"       , "1"       , "3"       , "5"       , "0"       , "0"       , "12"      , "5"       , "2"       , "23"    };
+            string[] ARoom_number = new string[10] { "247", "246", "204", "123", "435", "62", "345", "835", "124", "2104" };
+            string[] ABuilding = new string[10] { "Fernik", "Fernik", "Mitchel", "Fernik", "Mitchel", "Fernik", "Mitchel", "Mitchel", "Fernik", "Mitchel" };
+            string[] AFloor = new string[10] { "1", "1", "3", "5", "0", "0", "12", "5", "2", "23" };
             for (i = 0; i < 10; i++)
             {
                 DBobj.InsertInto(String.Format("INSERT INTO rooms (room_number,building,floor)VALUES ('{0}','{1}','{2}')", ARoom_number[i], ABuilding[i], AFloor[i]));
@@ -117,7 +112,5 @@ namespace YogevDbShenkar
             string Drop2 = "DROP TABLE lecturers";
             DBobj.DropTable(Drop2);
         }
-    }
-
-
+    }*/
 }

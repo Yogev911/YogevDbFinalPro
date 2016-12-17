@@ -9,7 +9,7 @@ using System.Windows.Forms;
 namespace YogevDbShenkar
 {
 
-    class DataBaseConnect
+    public class DataBaseConnect
     {
 
         public MySqlConnection connection;
@@ -19,10 +19,15 @@ namespace YogevDbShenkar
         private string password;
         public bool connected = false;
 
+        public string MyServer { get { return server; } set { server = value; } }
+        public string MyDatabase { get { return database; } set { database = value; } }
+        public string MyUidr { get { return uid; } set { uid = value; } }
+        public string MyPassword { get { return password; } set { password = value; } }
+
         //Constructor
         public DataBaseConnect()
         {
-            //Initialize();
+        //    Initialize();
         }
 
         //Initialize values
@@ -30,18 +35,19 @@ namespace YogevDbShenkar
         {
             if (connected == true)
             {
-                MessageBox.Show("you are already connected!");
+                Console.WriteLine("you are already connected!");
             }
             else
             {
                 server = "localhost";
                 database = "yogevtest";
                 uid = "root";
-                password = "";
+                password = "1111";
                 string connectionString;
                 connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
                 connection = new MySqlConnection(connectionString);
-                MessageBox.Show("connected!");
+                connected = true;
+                Console.WriteLine("connected!");
             }
         }
 
@@ -61,13 +67,14 @@ namespace YogevDbShenkar
                 switch (ex.Number)
                 {
                     case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        Console.WriteLine("Cannot connect to server.  Contact administrator");
                         break;
 
                     case 1045:
-                        MessageBox.Show("Invalid username/password, please try again");
+                        Console.WriteLine("Invalid username/password, please try again");
                         break;
                 }
+                Console.WriteLine("error in : ", ex);
                 return false;
             }
         }
@@ -81,7 +88,7 @@ namespace YogevDbShenkar
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.Message);
                 return false;
             }
         }
@@ -118,6 +125,16 @@ namespace YogevDbShenkar
                 cmd.ExecuteNonQuery();
 
                 //close connection
+                this.CloseConnection();
+            }
+        }
+
+        public void RunQuery(string Query)
+        {
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(Query, connection);
+                cmd.ExecuteNonQuery();
                 this.CloseConnection();
             }
         }
