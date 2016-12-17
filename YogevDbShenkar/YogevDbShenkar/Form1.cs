@@ -14,7 +14,7 @@ namespace YogevDbShenkar
     public partial class Form1 : Form
     {
         private DataBaseConnect DBobj = new DataBaseConnect();
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -27,17 +27,21 @@ namespace YogevDbShenkar
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-                string Drop1 = "DROP TABLE rooms";
-                string Drop2 = "DROP TABLE lecturers";
-                string Drop3 = "DROP TABLE courses";
-                string Drop4 = "DROP TABLE schedule";
 
-                DBobj.DropTable(Drop1);
-                DBobj.DropTable(Drop2);
-                DBobj.DropTable(Drop3);
-                DBobj.DropTable(Drop4);
-                
+            string Drop1 = "DROP TABLE rooms";
+            string Drop2 = "DROP TABLE lecturers";
+            string Drop3 = "DROP TABLE courses";
+            string Drop4 = "DROP TABLE schedule";
+
+            DBobj.DropTable(Drop1);
+            DBobj.DropTable(Drop2);
+            DBobj.DropTable(Drop3);
+            DBobj.DropTable(Drop4);
+
+        }
+        private void testing()
+        {
+            Console.WriteLine("hello");
         }
 
         private void button3_Click(object sender, EventArgs e)
