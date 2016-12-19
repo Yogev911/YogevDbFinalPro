@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.IO;
 
 namespace YogevDbShenkar
 {
@@ -18,6 +19,7 @@ namespace YogevDbShenkar
         private string uid;
         private string password;
         public bool connected = false;
+        public string select;
 
         public string MyServer { get { return server; } set { server = value; } }
         public string MyDatabase { get { return database; } set { database = value; } }
@@ -35,19 +37,20 @@ namespace YogevDbShenkar
         {
             if (connected == true)
             {
-                Console.WriteLine("you are already connected!");
+                MessageBox.Show("you are already connected!");
             }
             else
             {
-                server = "localhost";
-                database = "yogevtest";
-                uid = "root";
-                password = "1111";
+                //server = "localhost";
+                //database = "yogevtest";
+                //uid = "root";
+                //password = "1111";
                 string connectionString;
                 connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
                 connection = new MySqlConnection(connectionString);
                 connected = true;
-                Console.WriteLine("connected!");
+                MessageBox.Show("connected!");
+                MessageBox.Show("SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";");
             }
         }
 
@@ -67,14 +70,14 @@ namespace YogevDbShenkar
                 switch (ex.Number)
                 {
                     case 0:
-                        Console.WriteLine("Cannot connect to server.  Contact administrator");
+                        MessageBox.Show("Cannot connect to server.  Contact administrator");
                         break;
 
                     case 1045:
-                        Console.WriteLine("Invalid username/password, please try again");
+                        MessageBox.Show("Invalid username/password, please try again");
                         break;
                 }
-                Console.WriteLine("error in : ", ex);
+                MessageBox.Show("error in : ", ex.ToString());
                 return false;
             }
         }
@@ -88,45 +91,77 @@ namespace YogevDbShenkar
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
                 return false;
             }
         }
 
-        public void DropTable(string query)
+        public List<string[]> selectFirstTBL(string Query,int culs)
         {
-            if (this.OpenConnection() == true)
+            int i = 0;
+            string path = "C:\\Users\\Yogev Heskia\\Desktop\\log.txt";
+            if (!File.Exists(path))
             {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                this.CloseConnection();
+                File.WriteAllText(path, "starting the log" + "\n");
             }
+
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(Query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                List<string[]> cul = new List<string[]>();
+                while (reader.Read())
+                {
+                    string[] Cul_add = new string[culs];
+                    Cul_add[0] = reader[0].ToString();
+                    Cul_add[1] = reader[1].ToString();
+                    Cul_add[2] = reader[2].ToString();
+
+                    //MessageBox.Show(Cul_add[0].ToString() + "\t" + Cul_add[1].ToString() + "\t" + Cul_add[2].ToString());
+
+                    cul.Insert(i++,Cul_add);
+                }
+                
+                connection.Close();
+                return cul;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("error in bla bla" + e);
+            }
+            return null;
         }
 
-        public void InsertInto(string query)
+        public void fillingUp()
         {
-            if (this.OpenConnection() == true)
-            {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                this.CloseConnection();
-            }
-        }
-        public void AddTable(string TableName)
-        {
-            //string query = string.Format("CREATE TABLE IF NOT EXISTS {0}(id int NOT NULL AUTO_INCREMENT, first varchar(255), last varchar(255),PRIMARY KEY(id))",TableName);
-            //open connection
-            if (this.OpenConnection() == true)
-            {
-                //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(TableName, connection);
+            int i = 0;
 
-                //Execute command
-                cmd.ExecuteNonQuery();
+            string[] ARoom_number = new string[10] { "247", "246", "204", "123", "435", "62", "345", "835", "124", "2104" };
+            string[] ABuilding = new string[10] { "Fernik", "Fernik", "Mitchel", "Fernik", "Mitchel", "Fernik", "Mitchel", "Mitchel", "Fernik", "Mitchel" };
+            string[] AFloor = new string[10] { "247", "246", "204", "123", "435", "62", "345", "835", "124", "2104" };
 
-                //close connection
-                this.CloseConnection();
-            }
+            for (i = 0; i < 10; i++)
+                RunQuery(String.Format("INSERT INTO rooms (room_number,building,floor)VALUES ('{0}','{1}','{2}')", ARoom_number[i], ABuilding[i], AFloor[i]));
+
+            string[] Bid = new string[10] { "301234546", "456214046", "304812345", "304345796", "35844046", "30483953", "33456046", "304846843", "975424046", "302467846" };
+            string[] Bfirst_name = new string[10] { "Sheran", "Gal", "Fredreg", "Eitan", "Carlos", "Eran", "Eli", "Eliel", "Maor", "Gili" };
+            string[] Blast_name = new string[10] { "Yeini", "Alberman", "Harush", "Tibi", "Garcia", "Zehvi", "Dasa", "Perez", "Buzaglo", "Vermot" };
+            string[] Bphone_number = new string[10] { "0501987434", "0528814634", "0508822344", "0508111234", "0528877734", "0589999834", "0508811395", "0508198734", "0529878834", "0545818834" };
+            string[] Baddress = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+
+            for (i = 0; i < 10; i++)
+                RunQuery(String.Format("INSERT INTO lecturers (id, first_name, last_name,phone_number,address)VALUES ('{0}','{1}','{2}','{3}','{4}')", Bid[i], Bfirst_name[i], Blast_name[i], Bphone_number[i], Baddress[i]));
+
+            string[] Ccourse_number = new string[10] { "22345", "22346", "22347", "22358", "18374", "22359", "33456", "33457", "33458", "33459" };
+            string[] Cname = new string[10] { "Database", "communication1", "communication2", "calculus1", "calculus2", "Algorithms", "data structures", "Physics1", "Physics2", "Unix" };
+            string[] Cyear = new string[10] { "A", "A", "B", "A", "B", "B", "A", "B", "C", "C" };
+            string[] Csemester = new string[10] { "A", "A", "A", "B", "B", "A", "B", "B", "B", "A" };
+            string[] Chours = new string[10] { "3", "3", "3", "4", "5", "3", "3", "5", "4", "3" };
+
+            for (i = 0; i < 10; i++)
+                RunQuery(String.Format("INSERT INTO courses (course_number,name,year,semester,hours)VALUES ('{0}','{1}','{2}','{3}','{4}')", Ccourse_number[i], Cname[i], Cyear[i], Csemester[i], Chours[i]));
+
         }
 
         public void RunQuery(string Query)
@@ -135,6 +170,7 @@ namespace YogevDbShenkar
             {
                 MySqlCommand cmd = new MySqlCommand(Query, connection);
                 cmd.ExecuteNonQuery();
+                
                 this.CloseConnection();
             }
         }

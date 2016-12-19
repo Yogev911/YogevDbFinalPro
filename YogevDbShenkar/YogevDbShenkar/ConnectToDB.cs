@@ -34,7 +34,7 @@ namespace YogevDbShenkar
             DBobj.MyUidr = ID.Text;
             DBobj.MyPassword = password.Text;
 
-            //DBobj.Initialize();
+            DBobj.Initialize();
 
             //this.Close();
             th = new Thread(OpenDash);

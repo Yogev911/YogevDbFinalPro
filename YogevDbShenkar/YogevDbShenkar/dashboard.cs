@@ -22,15 +22,25 @@ namespace YogevDbShenkar
             DBobj = obj;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+
+        private void ClassInsert_Click(object sender, EventArgs e)
         {
+            int i = 0;
+            DBobj.RunQuery(String.Format("INSERT INTO rooms (room_number,building,floor)VALUES ('{0}','{1}','{2}')", tbRoomNumber.Text, tbBuilding.Text, tbFloorNumber.Text));
+            var culs = DBobj.selectFirstTBL("SELECT * FROM rooms;", 3);
+            dataGridView1.Rows.Clear();
+            foreach (var item in culs)
+            {
+                dataGridView1.Rows.Add(item[0], item[1], item[2]);
+            }
+            
 
         }
 
-        private void Refresh_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
-            dataGridView1.Rows.Add(DBobj.MyDatabase, DBobj.MyPassword, DBobj.MyServer);
+            DBobj.fillingUp();
         }
     }
 }
