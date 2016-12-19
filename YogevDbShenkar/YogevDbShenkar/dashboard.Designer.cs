@@ -58,6 +58,27 @@
             this.tbRoomNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbCourseNumber = new System.Windows.Forms.TextBox();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.tbYear = new System.Windows.Forms.TextBox();
+            this.tbSemester = new System.Windows.Forms.TextBox();
+            this.tbHours = new System.Windows.Forms.TextBox();
+            this.CoursesInsert = new System.Windows.Forms.Button();
+            this.lecturersInsert = new System.Windows.Forms.Button();
+            this.tbAddress = new System.Windows.Forms.TextBox();
+            this.tbPhone = new System.Windows.Forms.TextBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.tbID = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -83,7 +104,7 @@
             this.room_number,
             this.building,
             this.floor});
-            this.dataGridView1.Location = new System.Drawing.Point(11, 514);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 419);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -97,7 +118,7 @@
             this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(441, 673);
+            this.dataGridView1.Size = new System.Drawing.Size(441, 768);
             this.dataGridView1.TabIndex = 1;
             // 
             // room_number
@@ -128,7 +149,7 @@
             this.phone_number,
             this.address});
             this.dataGridView2.GridColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridView2.Location = new System.Drawing.Point(1123, 514);
+            this.dataGridView2.Location = new System.Drawing.Point(1123, 419);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView2.Name = "dataGridView2";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -142,7 +163,7 @@
             this.dataGridView2.RowHeadersWidth = 25;
             this.dataGridView2.RowTemplate.Height = 40;
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.Size = new System.Drawing.Size(689, 673);
+            this.dataGridView2.Size = new System.Drawing.Size(689, 768);
             this.dataGridView2.TabIndex = 2;
             // 
             // ID
@@ -183,7 +204,7 @@
             this.semester,
             this.hours});
             this.dataGridView3.GridColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridView3.Location = new System.Drawing.Point(456, 514);
+            this.dataGridView3.Location = new System.Drawing.Point(456, 419);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView3.Name = "dataGridView3";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -197,7 +218,7 @@
             this.dataGridView3.RowHeadersWidth = 25;
             this.dataGridView3.RowTemplate.Height = 40;
             this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView3.Size = new System.Drawing.Size(663, 673);
+            this.dataGridView3.Size = new System.Drawing.Size(663, 768);
             this.dataGridView3.TabIndex = 3;
             // 
             // course_number
@@ -296,21 +317,194 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(459, 131);
+            this.label1.Location = new System.Drawing.Point(458, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 23);
+            this.label1.Size = new System.Drawing.Size(144, 23);
             this.label1.TabIndex = 12;
-            this.label1.Text = "label1";
+            this.label1.Text = "Course number";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(266, 386);
+            this.button1.Location = new System.Drawing.Point(1665, 31);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 122);
+            this.button1.Size = new System.Drawing.Size(106, 71);
             this.button1.TabIndex = 13;
-            this.button1.Text = "Add rows";
+            this.button1.Text = "InitTest";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(458, 174);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 23);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(458, 210);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 23);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Year";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(458, 246);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 23);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Semester";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(458, 282);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 23);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Hours";
+            // 
+            // tbCourseNumber
+            // 
+            this.tbCourseNumber.Location = new System.Drawing.Point(672, 135);
+            this.tbCourseNumber.Name = "tbCourseNumber";
+            this.tbCourseNumber.Size = new System.Drawing.Size(215, 30);
+            this.tbCourseNumber.TabIndex = 18;
+            // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(672, 171);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(215, 30);
+            this.tbName.TabIndex = 19;
+            // 
+            // tbYear
+            // 
+            this.tbYear.Location = new System.Drawing.Point(672, 207);
+            this.tbYear.Name = "tbYear";
+            this.tbYear.Size = new System.Drawing.Size(215, 30);
+            this.tbYear.TabIndex = 20;
+            // 
+            // tbSemester
+            // 
+            this.tbSemester.Location = new System.Drawing.Point(672, 243);
+            this.tbSemester.Name = "tbSemester";
+            this.tbSemester.Size = new System.Drawing.Size(215, 30);
+            this.tbSemester.TabIndex = 21;
+            // 
+            // tbHours
+            // 
+            this.tbHours.Location = new System.Drawing.Point(672, 279);
+            this.tbHours.Name = "tbHours";
+            this.tbHours.Size = new System.Drawing.Size(215, 30);
+            this.tbHours.TabIndex = 22;
+            // 
+            // CoursesInsert
+            // 
+            this.CoursesInsert.Location = new System.Drawing.Point(672, 333);
+            this.CoursesInsert.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.CoursesInsert.Name = "CoursesInsert";
+            this.CoursesInsert.Size = new System.Drawing.Size(214, 47);
+            this.CoursesInsert.TabIndex = 23;
+            this.CoursesInsert.Text = "Insert new row";
+            this.CoursesInsert.UseVisualStyleBackColor = true;
+            this.CoursesInsert.Click += new System.EventHandler(this.CoursesInsert_Click);
+            // 
+            // lecturersInsert
+            // 
+            this.lecturersInsert.Location = new System.Drawing.Point(1333, 333);
+            this.lecturersInsert.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.lecturersInsert.Name = "lecturersInsert";
+            this.lecturersInsert.Size = new System.Drawing.Size(214, 47);
+            this.lecturersInsert.TabIndex = 34;
+            this.lecturersInsert.Text = "Insert new row";
+            this.lecturersInsert.UseVisualStyleBackColor = true;
+            this.lecturersInsert.Click += new System.EventHandler(this.lecturersInsert_Click);
+            // 
+            // tbAddress
+            // 
+            this.tbAddress.Location = new System.Drawing.Point(1333, 279);
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.Size = new System.Drawing.Size(215, 30);
+            this.tbAddress.TabIndex = 33;
+            // 
+            // tbPhone
+            // 
+            this.tbPhone.Location = new System.Drawing.Point(1333, 243);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(215, 30);
+            this.tbPhone.TabIndex = 32;
+            // 
+            // tbLastName
+            // 
+            this.tbLastName.Location = new System.Drawing.Point(1333, 207);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(215, 30);
+            this.tbLastName.TabIndex = 31;
+            // 
+            // tbFirstName
+            // 
+            this.tbFirstName.Location = new System.Drawing.Point(1333, 171);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(215, 30);
+            this.tbFirstName.TabIndex = 30;
+            // 
+            // tbID
+            // 
+            this.tbID.Location = new System.Drawing.Point(1333, 135);
+            this.tbID.Name = "tbID";
+            this.tbID.Size = new System.Drawing.Size(215, 30);
+            this.tbID.TabIndex = 29;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1119, 282);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 23);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Address";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1119, 246);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(136, 23);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Phone number";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(1119, 210);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 23);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Last name";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(1119, 174);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(103, 23);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "First name";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1119, 138);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(30, 23);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "ID";
             // 
             // dashboard
             // 
@@ -318,6 +512,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1821, 1193);
+            this.Controls.Add(this.lecturersInsert);
+            this.Controls.Add(this.tbAddress);
+            this.Controls.Add(this.tbPhone);
+            this.Controls.Add(this.tbLastName);
+            this.Controls.Add(this.tbFirstName);
+            this.Controls.Add(this.tbID);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.CoursesInsert);
+            this.Controls.Add(this.tbHours);
+            this.Controls.Add(this.tbSemester);
+            this.Controls.Add(this.tbYear);
+            this.Controls.Add(this.tbName);
+            this.Controls.Add(this.tbCourseNumber);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbRoomNumber);
@@ -374,5 +589,26 @@
         private System.Windows.Forms.TextBox tbRoomNumber;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbCourseNumber;
+        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.TextBox tbYear;
+        private System.Windows.Forms.TextBox tbSemester;
+        private System.Windows.Forms.TextBox tbHours;
+        private System.Windows.Forms.Button CoursesInsert;
+        private System.Windows.Forms.Button lecturersInsert;
+        private System.Windows.Forms.TextBox tbAddress;
+        private System.Windows.Forms.TextBox tbPhone;
+        private System.Windows.Forms.TextBox tbLastName;
+        private System.Windows.Forms.TextBox tbFirstName;
+        private System.Windows.Forms.TextBox tbID;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

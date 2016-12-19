@@ -98,13 +98,6 @@ namespace YogevDbShenkar
 
         public List<string[]> selectFirstTBL(string Query,int culs)
         {
-            int i = 0;
-            string path = "C:\\Users\\Yogev Heskia\\Desktop\\log.txt";
-            if (!File.Exists(path))
-            {
-                File.WriteAllText(path, "starting the log" + "\n");
-            }
-
             try
             {
                 connection.Open();
@@ -117,12 +110,8 @@ namespace YogevDbShenkar
                     Cul_add[0] = reader[0].ToString();
                     Cul_add[1] = reader[1].ToString();
                     Cul_add[2] = reader[2].ToString();
-
-                    //MessageBox.Show(Cul_add[0].ToString() + "\t" + Cul_add[1].ToString() + "\t" + Cul_add[2].ToString());
-
-                    cul.Insert(i++,Cul_add);
+                    cul.Add(Cul_add);
                 }
-                
                 connection.Close();
                 return cul;
             }
@@ -132,6 +121,36 @@ namespace YogevDbShenkar
             }
             return null;
         }
+
+        public List<string[]> selectSecondTBL(string Query, int culs)
+        {
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(Query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                List<string[]> cul = new List<string[]>();
+                while (reader.Read())
+                {
+                    string[] Cul_add = new string[culs];
+                    Cul_add[0] = reader[0].ToString();
+                    Cul_add[1] = reader[1].ToString();
+                    Cul_add[2] = reader[2].ToString();
+                    Cul_add[3] = reader[3].ToString();
+                    Cul_add[4] = reader[4].ToString();
+                    cul.Add(Cul_add);
+                }
+                connection.Close();
+                return cul;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("error in bla bla" + e);
+            }
+            return null;
+        }
+
+
 
         public void fillingUp()
         {
