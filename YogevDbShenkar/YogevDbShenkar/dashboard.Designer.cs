@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lable1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.room_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,9 +80,25 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.ShowAll = new System.Windows.Forms.Button();
+            this.DropRooms = new System.Windows.Forms.Button();
+            this.DropCourses = new System.Windows.Forms.Button();
+            this.DropLecturers = new System.Windows.Forms.Button();
+            this.CreateTBLs = new System.Windows.Forms.Button();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scheduleLbl = new System.Windows.Forms.Label();
+            this.UpdateClass = new System.Windows.Forms.Button();
+            this.UpdateCourse = new System.Windows.Forms.Button();
+            this.UpdateLecture = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // lable1
@@ -107,14 +124,14 @@
             this.dataGridView1.Location = new System.Drawing.Point(11, 419);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -152,14 +169,14 @@
             this.dataGridView2.Location = new System.Drawing.Point(1123, 419);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView2.RowHeadersWidth = 25;
             this.dataGridView2.RowTemplate.Height = 40;
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -207,14 +224,14 @@
             this.dataGridView3.Location = new System.Drawing.Point(456, 419);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView3.Name = "dataGridView3";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView3.RowHeadersWidth = 25;
             this.dataGridView3.RowTemplate.Height = 40;
             this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -325,11 +342,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1665, 31);
+            this.button1.Location = new System.Drawing.Point(1593, 114);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 71);
+            this.button1.Size = new System.Drawing.Size(178, 71);
             this.button1.TabIndex = 13;
-            this.button1.Text = "InitTest";
+            this.button1.Text = "AddRows";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -409,7 +426,7 @@
             this.CoursesInsert.Location = new System.Drawing.Point(672, 333);
             this.CoursesInsert.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CoursesInsert.Name = "CoursesInsert";
-            this.CoursesInsert.Size = new System.Drawing.Size(214, 47);
+            this.CoursesInsert.Size = new System.Drawing.Size(215, 47);
             this.CoursesInsert.TabIndex = 23;
             this.CoursesInsert.Text = "Insert new row";
             this.CoursesInsert.UseVisualStyleBackColor = true;
@@ -506,12 +523,172 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "ID";
             // 
+            // ShowAll
+            // 
+            this.ShowAll.Location = new System.Drawing.Point(1593, 198);
+            this.ShowAll.Name = "ShowAll";
+            this.ShowAll.Size = new System.Drawing.Size(178, 71);
+            this.ShowAll.TabIndex = 35;
+            this.ShowAll.Text = "Show all tables";
+            this.ShowAll.UseVisualStyleBackColor = true;
+            this.ShowAll.Click += new System.EventHandler(this.ShowAll_Click);
+            // 
+            // DropRooms
+            // 
+            this.DropRooms.Location = new System.Drawing.Point(11, 265);
+            this.DropRooms.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.DropRooms.Name = "DropRooms";
+            this.DropRooms.Size = new System.Drawing.Size(130, 47);
+            this.DropRooms.TabIndex = 36;
+            this.DropRooms.Text = "Drop Table";
+            this.DropRooms.UseVisualStyleBackColor = true;
+            this.DropRooms.Click += new System.EventHandler(this.DropRooms_Click);
+            // 
+            // DropCourses
+            // 
+            this.DropCourses.Location = new System.Drawing.Point(455, 308);
+            this.DropCourses.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.DropCourses.Name = "DropCourses";
+            this.DropCourses.Size = new System.Drawing.Size(130, 47);
+            this.DropCourses.TabIndex = 37;
+            this.DropCourses.Text = "Drop Table";
+            this.DropCourses.UseVisualStyleBackColor = true;
+            this.DropCourses.Click += new System.EventHandler(this.DropCourses_Click);
+            // 
+            // DropLecturers
+            // 
+            this.DropLecturers.Location = new System.Drawing.Point(1123, 308);
+            this.DropLecturers.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.DropLecturers.Name = "DropLecturers";
+            this.DropLecturers.Size = new System.Drawing.Size(130, 47);
+            this.DropLecturers.TabIndex = 38;
+            this.DropLecturers.Text = "Drop Table";
+            this.DropLecturers.UseVisualStyleBackColor = true;
+            this.DropLecturers.Click += new System.EventHandler(this.DropLecturers_Click);
+            // 
+            // CreateTBLs
+            // 
+            this.CreateTBLs.Location = new System.Drawing.Point(1593, 31);
+            this.CreateTBLs.Name = "CreateTBLs";
+            this.CreateTBLs.Size = new System.Drawing.Size(178, 71);
+            this.CreateTBLs.TabIndex = 39;
+            this.CreateTBLs.Text = "CreateTBLs";
+            this.CreateTBLs.UseVisualStyleBackColor = true;
+            this.CreateTBLs.Click += new System.EventHandler(this.CreateTBLs_Click);
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.dataGridView4.GridColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridView4.Location = new System.Drawing.Point(1816, 419);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dataGridView4.Name = "dataGridView4";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridView4.RowHeadersWidth = 25;
+            this.dataGridView4.RowTemplate.Height = 40;
+            this.dataGridView4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView4.Size = new System.Drawing.Size(689, 768);
+            this.dataGridView4.TabIndex = 40;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "First name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Last name";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Phone number";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // scheduleLbl
+            // 
+            this.scheduleLbl.AutoSize = true;
+            this.scheduleLbl.Location = new System.Drawing.Point(2129, 55);
+            this.scheduleLbl.Name = "scheduleLbl";
+            this.scheduleLbl.Size = new System.Drawing.Size(90, 23);
+            this.scheduleLbl.TabIndex = 41;
+            this.scheduleLbl.Text = "Schedule";
+            // 
+            // UpdateClass
+            // 
+            this.UpdateClass.Location = new System.Drawing.Point(11, 333);
+            this.UpdateClass.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.UpdateClass.Name = "UpdateClass";
+            this.UpdateClass.Size = new System.Drawing.Size(130, 47);
+            this.UpdateClass.TabIndex = 42;
+            this.UpdateClass.Text = "UpdateClass";
+            this.UpdateClass.UseVisualStyleBackColor = true;
+            this.UpdateClass.Click += new System.EventHandler(this.UpdateClass_Click);
+            // 
+            // UpdateCourse
+            // 
+            this.UpdateCourse.Location = new System.Drawing.Point(456, 361);
+            this.UpdateCourse.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.UpdateCourse.Name = "UpdateCourse";
+            this.UpdateCourse.Size = new System.Drawing.Size(130, 47);
+            this.UpdateCourse.TabIndex = 43;
+            this.UpdateCourse.Text = "UpdateCourse";
+            this.UpdateCourse.UseVisualStyleBackColor = true;
+            this.UpdateCourse.Click += new System.EventHandler(this.UpdateCourse_Click);
+            // 
+            // UpdateLecture
+            // 
+            this.UpdateLecture.Location = new System.Drawing.Point(1123, 361);
+            this.UpdateLecture.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.UpdateLecture.Name = "UpdateLecture";
+            this.UpdateLecture.Size = new System.Drawing.Size(130, 47);
+            this.UpdateLecture.TabIndex = 44;
+            this.UpdateLecture.Text = "UpdateLecture";
+            this.UpdateLecture.UseVisualStyleBackColor = true;
+            this.UpdateLecture.Click += new System.EventHandler(this.UpdateLecture_Click);
+            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1821, 1193);
+            this.ClientSize = new System.Drawing.Size(2513, 1193);
+            this.Controls.Add(this.UpdateLecture);
+            this.Controls.Add(this.UpdateCourse);
+            this.Controls.Add(this.UpdateClass);
+            this.Controls.Add(this.scheduleLbl);
+            this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.CreateTBLs);
+            this.Controls.Add(this.DropLecturers);
+            this.Controls.Add(this.DropCourses);
+            this.Controls.Add(this.DropRooms);
+            this.Controls.Add(this.ShowAll);
             this.Controls.Add(this.lecturersInsert);
             this.Controls.Add(this.tbAddress);
             this.Controls.Add(this.tbPhone);
@@ -555,6 +732,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -610,5 +788,20 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button ShowAll;
+        private System.Windows.Forms.Button DropRooms;
+        private System.Windows.Forms.Button DropCourses;
+        private System.Windows.Forms.Button DropLecturers;
+        private System.Windows.Forms.Button CreateTBLs;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Label scheduleLbl;
+        private System.Windows.Forms.Button UpdateClass;
+        private System.Windows.Forms.Button UpdateCourse;
+        private System.Windows.Forms.Button UpdateLecture;
     }
 }
