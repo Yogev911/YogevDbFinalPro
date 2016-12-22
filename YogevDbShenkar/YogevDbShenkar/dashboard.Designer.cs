@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lable1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.room_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -124,18 +124,18 @@
             this.dataGridView1.Location = new System.Drawing.Point(11, 419);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(441, 768);
+            this.dataGridView1.Size = new System.Drawing.Size(663, 768);
             this.dataGridView1.TabIndex = 1;
             // 
             // room_number
@@ -166,21 +166,21 @@
             this.phone_number,
             this.address});
             this.dataGridView2.GridColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridView2.Location = new System.Drawing.Point(1123, 419);
+            this.dataGridView2.Location = new System.Drawing.Point(1345, 419);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView2.RowHeadersWidth = 25;
             this.dataGridView2.RowTemplate.Height = 40;
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.Size = new System.Drawing.Size(689, 768);
+            this.dataGridView2.Size = new System.Drawing.Size(663, 768);
             this.dataGridView2.TabIndex = 2;
             // 
             // ID
@@ -221,17 +221,17 @@
             this.semester,
             this.hours});
             this.dataGridView3.GridColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridView3.Location = new System.Drawing.Point(456, 419);
+            this.dataGridView3.Location = new System.Drawing.Point(678, 419);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView3.Name = "dataGridView3";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView3.RowHeadersWidth = 25;
             this.dataGridView3.RowTemplate.Height = 40;
             this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -265,10 +265,10 @@
             // 
             // ClassInsert
             // 
-            this.ClassInsert.Location = new System.Drawing.Point(237, 265);
+            this.ClassInsert.Location = new System.Drawing.Point(442, 361);
             this.ClassInsert.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.ClassInsert.Name = "ClassInsert";
-            this.ClassInsert.Size = new System.Drawing.Size(214, 47);
+            this.ClassInsert.Size = new System.Drawing.Size(150, 47);
             this.ClassInsert.TabIndex = 4;
             this.ClassInsert.Text = "Insert new row";
             this.ClassInsert.UseVisualStyleBackColor = true;
@@ -286,7 +286,7 @@
             // ClassesRoomNumber
             // 
             this.ClassesRoomNumber.AutoSize = true;
-            this.ClassesRoomNumber.Location = new System.Drawing.Point(12, 210);
+            this.ClassesRoomNumber.Location = new System.Drawing.Point(7, 212);
             this.ClassesRoomNumber.Name = "ClassesRoomNumber";
             this.ClassesRoomNumber.Size = new System.Drawing.Size(133, 23);
             this.ClassesRoomNumber.TabIndex = 6;
@@ -295,7 +295,7 @@
             // ClassesBuilding
             // 
             this.ClassesBuilding.AutoSize = true;
-            this.ClassesBuilding.Location = new System.Drawing.Point(12, 138);
+            this.ClassesBuilding.Location = new System.Drawing.Point(7, 140);
             this.ClassesBuilding.Name = "ClassesBuilding";
             this.ClassesBuilding.Size = new System.Drawing.Size(77, 23);
             this.ClassesBuilding.TabIndex = 7;
@@ -304,7 +304,7 @@
             // ClassesFloorNumber
             // 
             this.ClassesFloorNumber.AutoSize = true;
-            this.ClassesFloorNumber.Location = new System.Drawing.Point(12, 174);
+            this.ClassesFloorNumber.Location = new System.Drawing.Point(7, 176);
             this.ClassesFloorNumber.Name = "ClassesFloorNumber";
             this.ClassesFloorNumber.Size = new System.Drawing.Size(129, 23);
             this.ClassesFloorNumber.TabIndex = 8;
@@ -312,21 +312,21 @@
             // 
             // tbBuilding
             // 
-            this.tbBuilding.Location = new System.Drawing.Point(237, 131);
+            this.tbBuilding.Location = new System.Drawing.Point(146, 133);
             this.tbBuilding.Name = "tbBuilding";
             this.tbBuilding.Size = new System.Drawing.Size(215, 30);
             this.tbBuilding.TabIndex = 9;
             // 
             // tbFloorNumber
             // 
-            this.tbFloorNumber.Location = new System.Drawing.Point(237, 167);
+            this.tbFloorNumber.Location = new System.Drawing.Point(146, 169);
             this.tbFloorNumber.Name = "tbFloorNumber";
             this.tbFloorNumber.Size = new System.Drawing.Size(215, 30);
             this.tbFloorNumber.TabIndex = 10;
             // 
             // tbRoomNumber
             // 
-            this.tbRoomNumber.Location = new System.Drawing.Point(237, 203);
+            this.tbRoomNumber.Location = new System.Drawing.Point(146, 205);
             this.tbRoomNumber.Name = "tbRoomNumber";
             this.tbRoomNumber.Size = new System.Drawing.Size(215, 30);
             this.tbRoomNumber.TabIndex = 11;
@@ -334,7 +334,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(458, 138);
+            this.label1.Location = new System.Drawing.Point(674, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 23);
             this.label1.TabIndex = 12;
@@ -342,7 +342,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1593, 114);
+            this.button1.Location = new System.Drawing.Point(2117, 114);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(178, 71);
             this.button1.TabIndex = 13;
@@ -353,7 +353,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(458, 174);
+            this.label2.Location = new System.Drawing.Point(674, 176);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 23);
             this.label2.TabIndex = 14;
@@ -362,7 +362,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(458, 210);
+            this.label3.Location = new System.Drawing.Point(674, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 23);
             this.label3.TabIndex = 15;
@@ -371,7 +371,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(458, 246);
+            this.label4.Location = new System.Drawing.Point(674, 248);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 23);
             this.label4.TabIndex = 16;
@@ -380,7 +380,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(458, 282);
+            this.label5.Location = new System.Drawing.Point(674, 284);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 23);
             this.label5.TabIndex = 17;
@@ -388,45 +388,45 @@
             // 
             // tbCourseNumber
             // 
-            this.tbCourseNumber.Location = new System.Drawing.Point(672, 135);
+            this.tbCourseNumber.Location = new System.Drawing.Point(820, 137);
             this.tbCourseNumber.Name = "tbCourseNumber";
             this.tbCourseNumber.Size = new System.Drawing.Size(215, 30);
             this.tbCourseNumber.TabIndex = 18;
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(672, 171);
+            this.tbName.Location = new System.Drawing.Point(820, 173);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(215, 30);
             this.tbName.TabIndex = 19;
             // 
             // tbYear
             // 
-            this.tbYear.Location = new System.Drawing.Point(672, 207);
+            this.tbYear.Location = new System.Drawing.Point(820, 209);
             this.tbYear.Name = "tbYear";
             this.tbYear.Size = new System.Drawing.Size(215, 30);
             this.tbYear.TabIndex = 20;
             // 
             // tbSemester
             // 
-            this.tbSemester.Location = new System.Drawing.Point(672, 243);
+            this.tbSemester.Location = new System.Drawing.Point(820, 245);
             this.tbSemester.Name = "tbSemester";
             this.tbSemester.Size = new System.Drawing.Size(215, 30);
             this.tbSemester.TabIndex = 21;
             // 
             // tbHours
             // 
-            this.tbHours.Location = new System.Drawing.Point(672, 279);
+            this.tbHours.Location = new System.Drawing.Point(820, 281);
             this.tbHours.Name = "tbHours";
             this.tbHours.Size = new System.Drawing.Size(215, 30);
             this.tbHours.TabIndex = 22;
             // 
             // CoursesInsert
             // 
-            this.CoursesInsert.Location = new System.Drawing.Point(672, 333);
+            this.CoursesInsert.Location = new System.Drawing.Point(1100, 361);
             this.CoursesInsert.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CoursesInsert.Name = "CoursesInsert";
-            this.CoursesInsert.Size = new System.Drawing.Size(215, 47);
+            this.CoursesInsert.Size = new System.Drawing.Size(150, 47);
             this.CoursesInsert.TabIndex = 23;
             this.CoursesInsert.Text = "Insert new row";
             this.CoursesInsert.UseVisualStyleBackColor = true;
@@ -434,10 +434,10 @@
             // 
             // lecturersInsert
             // 
-            this.lecturersInsert.Location = new System.Drawing.Point(1333, 333);
+            this.lecturersInsert.Location = new System.Drawing.Point(1791, 361);
             this.lecturersInsert.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lecturersInsert.Name = "lecturersInsert";
-            this.lecturersInsert.Size = new System.Drawing.Size(214, 47);
+            this.lecturersInsert.Size = new System.Drawing.Size(150, 47);
             this.lecturersInsert.TabIndex = 34;
             this.lecturersInsert.Text = "Insert new row";
             this.lecturersInsert.UseVisualStyleBackColor = true;
@@ -445,35 +445,35 @@
             // 
             // tbAddress
             // 
-            this.tbAddress.Location = new System.Drawing.Point(1333, 279);
+            this.tbAddress.Location = new System.Drawing.Point(1481, 277);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(215, 30);
             this.tbAddress.TabIndex = 33;
             // 
             // tbPhone
             // 
-            this.tbPhone.Location = new System.Drawing.Point(1333, 243);
+            this.tbPhone.Location = new System.Drawing.Point(1481, 241);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(215, 30);
             this.tbPhone.TabIndex = 32;
             // 
             // tbLastName
             // 
-            this.tbLastName.Location = new System.Drawing.Point(1333, 207);
+            this.tbLastName.Location = new System.Drawing.Point(1481, 205);
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(215, 30);
             this.tbLastName.TabIndex = 31;
             // 
             // tbFirstName
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(1333, 171);
+            this.tbFirstName.Location = new System.Drawing.Point(1481, 169);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(215, 30);
             this.tbFirstName.TabIndex = 30;
             // 
             // tbID
             // 
-            this.tbID.Location = new System.Drawing.Point(1333, 135);
+            this.tbID.Location = new System.Drawing.Point(1481, 133);
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(215, 30);
             this.tbID.TabIndex = 29;
@@ -481,7 +481,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1119, 282);
+            this.label6.Location = new System.Drawing.Point(1341, 284);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 23);
             this.label6.TabIndex = 28;
@@ -490,7 +490,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1119, 246);
+            this.label7.Location = new System.Drawing.Point(1341, 248);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(136, 23);
             this.label7.TabIndex = 27;
@@ -499,7 +499,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1119, 210);
+            this.label8.Location = new System.Drawing.Point(1341, 212);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 23);
             this.label8.TabIndex = 26;
@@ -508,7 +508,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1119, 174);
+            this.label9.Location = new System.Drawing.Point(1341, 176);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 23);
             this.label9.TabIndex = 25;
@@ -517,7 +517,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1119, 138);
+            this.label10.Location = new System.Drawing.Point(1341, 140);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(30, 23);
             this.label10.TabIndex = 24;
@@ -525,7 +525,7 @@
             // 
             // ShowAll
             // 
-            this.ShowAll.Location = new System.Drawing.Point(1593, 198);
+            this.ShowAll.Location = new System.Drawing.Point(2117, 198);
             this.ShowAll.Name = "ShowAll";
             this.ShowAll.Size = new System.Drawing.Size(178, 71);
             this.ShowAll.TabIndex = 35;
@@ -535,10 +535,10 @@
             // 
             // DropRooms
             // 
-            this.DropRooms.Location = new System.Drawing.Point(11, 265);
+            this.DropRooms.Location = new System.Drawing.Point(56, 361);
             this.DropRooms.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.DropRooms.Name = "DropRooms";
-            this.DropRooms.Size = new System.Drawing.Size(130, 47);
+            this.DropRooms.Size = new System.Drawing.Size(150, 47);
             this.DropRooms.TabIndex = 36;
             this.DropRooms.Text = "Drop Table";
             this.DropRooms.UseVisualStyleBackColor = true;
@@ -546,10 +546,10 @@
             // 
             // DropCourses
             // 
-            this.DropCourses.Location = new System.Drawing.Point(455, 308);
+            this.DropCourses.Location = new System.Drawing.Point(742, 361);
             this.DropCourses.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.DropCourses.Name = "DropCourses";
-            this.DropCourses.Size = new System.Drawing.Size(130, 47);
+            this.DropCourses.Size = new System.Drawing.Size(150, 47);
             this.DropCourses.TabIndex = 37;
             this.DropCourses.Text = "Drop Table";
             this.DropCourses.UseVisualStyleBackColor = true;
@@ -557,10 +557,10 @@
             // 
             // DropLecturers
             // 
-            this.DropLecturers.Location = new System.Drawing.Point(1123, 308);
+            this.DropLecturers.Location = new System.Drawing.Point(1417, 361);
             this.DropLecturers.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.DropLecturers.Name = "DropLecturers";
-            this.DropLecturers.Size = new System.Drawing.Size(130, 47);
+            this.DropLecturers.Size = new System.Drawing.Size(150, 47);
             this.DropLecturers.TabIndex = 38;
             this.DropLecturers.Text = "Drop Table";
             this.DropLecturers.UseVisualStyleBackColor = true;
@@ -568,7 +568,7 @@
             // 
             // CreateTBLs
             // 
-            this.CreateTBLs.Location = new System.Drawing.Point(1593, 31);
+            this.CreateTBLs.Location = new System.Drawing.Point(2117, 31);
             this.CreateTBLs.Name = "CreateTBLs";
             this.CreateTBLs.Size = new System.Drawing.Size(178, 71);
             this.CreateTBLs.TabIndex = 39;
@@ -589,21 +589,21 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.dataGridView4.GridColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridView4.Location = new System.Drawing.Point(1816, 419);
+            this.dataGridView4.Location = new System.Drawing.Point(2012, 419);
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView4.Name = "dataGridView4";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView4.RowHeadersWidth = 25;
             this.dataGridView4.RowTemplate.Height = 40;
             this.dataGridView4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView4.Size = new System.Drawing.Size(689, 768);
+            this.dataGridView4.Size = new System.Drawing.Size(663, 768);
             this.dataGridView4.TabIndex = 40;
             // 
             // dataGridViewTextBoxColumn1
@@ -634,7 +634,7 @@
             // scheduleLbl
             // 
             this.scheduleLbl.AutoSize = true;
-            this.scheduleLbl.Location = new System.Drawing.Point(2129, 55);
+            this.scheduleLbl.Location = new System.Drawing.Point(2380, 55);
             this.scheduleLbl.Name = "scheduleLbl";
             this.scheduleLbl.Size = new System.Drawing.Size(90, 23);
             this.scheduleLbl.TabIndex = 41;
@@ -642,10 +642,10 @@
             // 
             // UpdateClass
             // 
-            this.UpdateClass.Location = new System.Drawing.Point(11, 333);
+            this.UpdateClass.Location = new System.Drawing.Point(243, 361);
             this.UpdateClass.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.UpdateClass.Name = "UpdateClass";
-            this.UpdateClass.Size = new System.Drawing.Size(130, 47);
+            this.UpdateClass.Size = new System.Drawing.Size(150, 47);
             this.UpdateClass.TabIndex = 42;
             this.UpdateClass.Text = "UpdateClass";
             this.UpdateClass.UseVisualStyleBackColor = true;
@@ -653,10 +653,10 @@
             // 
             // UpdateCourse
             // 
-            this.UpdateCourse.Location = new System.Drawing.Point(456, 361);
+            this.UpdateCourse.Location = new System.Drawing.Point(920, 361);
             this.UpdateCourse.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.UpdateCourse.Name = "UpdateCourse";
-            this.UpdateCourse.Size = new System.Drawing.Size(130, 47);
+            this.UpdateCourse.Size = new System.Drawing.Size(150, 47);
             this.UpdateCourse.TabIndex = 43;
             this.UpdateCourse.Text = "UpdateCourse";
             this.UpdateCourse.UseVisualStyleBackColor = true;
@@ -664,10 +664,10 @@
             // 
             // UpdateLecture
             // 
-            this.UpdateLecture.Location = new System.Drawing.Point(1123, 361);
+            this.UpdateLecture.Location = new System.Drawing.Point(1608, 361);
             this.UpdateLecture.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.UpdateLecture.Name = "UpdateLecture";
-            this.UpdateLecture.Size = new System.Drawing.Size(130, 47);
+            this.UpdateLecture.Size = new System.Drawing.Size(150, 47);
             this.UpdateLecture.TabIndex = 44;
             this.UpdateLecture.Text = "UpdateLecture";
             this.UpdateLecture.UseVisualStyleBackColor = true;
@@ -678,7 +678,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(2513, 1193);
+            this.ClientSize = new System.Drawing.Size(2683, 1193);
             this.Controls.Add(this.UpdateLecture);
             this.Controls.Add(this.UpdateCourse);
             this.Controls.Add(this.UpdateClass);

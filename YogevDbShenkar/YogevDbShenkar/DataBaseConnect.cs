@@ -198,7 +198,10 @@ namespace YogevDbShenkar
             if (this.OpenConnection() == true)
             {
                 MySqlCommand cmd = new MySqlCommand(Query, connection);
-                cmd.ExecuteNonQuery();
+                if (cmd.ExecuteNonQuery() == -1)
+                {
+                    MessageBox.Show("cmd.ExecuteNonQuery() returned -1");
+                }
                 
                 this.CloseConnection();
             }
