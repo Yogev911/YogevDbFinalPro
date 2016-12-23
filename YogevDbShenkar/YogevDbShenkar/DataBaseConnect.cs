@@ -154,57 +154,76 @@ namespace YogevDbShenkar
 
         public void fillingUp()
         {
-            int i = 0;
+            try
+            {
+                int i = 0;
 
-            string[] ARoom_number = new string[10] { "247", "246", "204", "123", "435", "62", "345", "835", "124", "2104" };
-            string[] ABuilding = new string[10] { "Fernik", "Fernik", "Mitchel", "Fernik", "Mitchel", "Fernik", "Mitchel", "Mitchel", "Fernik", "Mitchel" };
-            string[] AFloor = new string[10] { "247", "246", "204", "123", "435", "62", "345", "835", "124", "2104" };
+                string[] ARoom_number = new string[10] { "247", "246", "204", "123", "435", "62", "345", "835", "124", "2104" };
+                string[] ABuilding = new string[10] { "Fernik", "Fernik", "Mitchel", "Fernik", "Mitchel", "Fernik", "Mitchel", "Mitchel", "Fernik", "Mitchel" };
+                string[] AFloor = new string[10] { "247", "246", "204", "123", "435", "62", "345", "835", "124", "2104" };
 
-            for (i = 0; i < 10; i++)
-                RunQuery(String.Format("INSERT INTO rooms (room_number,building,floor)VALUES ('{0}','{1}','{2}')", Convert.ToInt32(ARoom_number[i]), ABuilding[i], Convert.ToInt32(AFloor[i])));
+                for (i = 0; i < 10; i++)
+                    RunQuery(String.Format("INSERT INTO rooms (room_number,building,floor)VALUES ('{0}','{1}','{2}')", Convert.ToInt32(ARoom_number[i]), ABuilding[i], Convert.ToInt32(AFloor[i])));
 
-            string[] Bid = new string[10] { "301234546", "456214046", "304812345", "304345796", "35844046", "30483953", "33456046", "304846843", "975424046", "302467846" };
-            string[] Bfirst_name = new string[10] { "Sheran", "Gal", "Fredreg", "Eitan", "Carlos", "Eran", "Eli", "Eliel", "Maor", "Gili" };
-            string[] Blast_name = new string[10] { "Yeini", "Alberman", "Harush", "Tibi", "Garcia", "Zehvi", "Dasa", "Perez", "Buzaglo", "Vermot" };
-            string[] Bphone_number = new string[10] { "0501987434", "0528814634", "0508822344", "0508111234", "0528877734", "0589999834", "0508811395", "0508198734", "0529878834", "0545818834" };
-            string[] Baddress = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
+                string[] Bid = new string[10] { "301234546", "456214046", "304812345", "304345796", "35844046", "30483953", "33456046", "304846843", "975424046", "302467846" };
+                string[] Bfirst_name = new string[10] { "Sheran", "Gal", "Fredreg", "Eitan", "Carlos", "Eran", "Eli", "Eliel", "Maor", "Gili" };
+                string[] Blast_name = new string[10] { "Yeini", "Alberman", "Harush", "Tibi", "Garcia", "Zehvi", "Dasa", "Perez", "Buzaglo", "Vermot" };
+                string[] Bphone_number = new string[10] { "0501987434", "0528814634", "0508822344", "0508111234", "0528877734", "0589999834", "0508811395", "0508198734", "0529878834", "0545818834" };
+                string[] Baddress = new string[10] { "247", "246", "204", "247", "246", "204", "247", "246", "204", "2104" };
 
-            for (i = 0; i < 10; i++)
-                RunQuery(String.Format("INSERT INTO lecturers (id, first_name, last_name,phone_number,address)VALUES ('{0}','{1}','{2}','{3}','{4}')", Convert.ToInt32(Bid[i]), Bfirst_name[i], Blast_name[i], Bphone_number[i], Baddress[i]));
+                for (i = 0; i < 10; i++)
+                    RunQuery(String.Format("INSERT INTO lecturers (id, first_name, last_name,phone_number,address)VALUES ('{0}','{1}','{2}','{3}','{4}')", Convert.ToInt32(Bid[i]), Bfirst_name[i], Blast_name[i], Bphone_number[i], Baddress[i]));
 
-            string[] Ccourse_number = new string[10] { "22345", "22346", "22347", "22358", "18374", "22359", "33456", "33457", "33458", "33459" };
-            string[] Cname = new string[10] { "Database", "communication1", "communication2", "calculus1", "calculus2", "Algorithms", "data structures", "Physics1", "Physics2", "Unix" };
-            string[] Cyear = new string[10] { "A", "A", "B", "A", "B", "B", "A", "B", "C", "C" };
-            string[] Csemester = new string[10] { "A", "A", "A", "B", "B", "A", "B", "B", "B", "A" };
-            string[] Chours = new string[10] { "3", "3", "3", "4", "5", "3", "3", "5", "4", "3" };
+                string[] Ccourse_number = new string[10] { "22345", "22346", "22347", "22358", "18374", "22359", "33456", "33457", "33458", "33459" };
+                string[] Cname = new string[10] { "Database", "communication1", "communication2", "calculus1", "calculus2", "Algorithms", "data structures", "Physics1", "Physics2", "Unix" };
+                string[] Cyear = new string[10] { "A", "A", "B", "A", "B", "B", "A", "B", "C", "C" };
+                string[] Csemester = new string[10] { "A", "A", "A", "B", "B", "A", "B", "B", "B", "A" };
+                string[] Chours = new string[10] { "3", "3", "3", "4", "5", "3", "3", "5", "4", "3" };
 
-            for (i = 0; i < 10; i++)
-                RunQuery(String.Format("INSERT INTO courses (course_number,name,year,semester,hours)VALUES ('{0}','{1}','{2}','{3}','{4}')", Convert.ToInt32(Ccourse_number[i]), Cname[i], Cyear[i], Csemester[i], Convert.ToInt32(Chours[i])));
+                for (i = 0; i < 10; i++)
+                    RunQuery(String.Format("INSERT INTO courses (course_number,name,year,semester,hours)VALUES ('{0}','{1}','{2}','{3}','{4}')", Convert.ToInt32(Ccourse_number[i]), Cname[i], Cyear[i], Csemester[i], Convert.ToInt32(Chours[i])));
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void CreateTBLs()
         {
-            string Table1 = "CREATE TABLE IF NOT EXISTS rooms(room_number int, building varchar(255), floor int,PRIMARY KEY(room_number))";
-            RunQuery(Table1);
-            string Table2 = "CREATE TABLE IF NOT EXISTS lecturers(id int, first_name varchar(255), last_name varchar(255),phone_number varchar(255),address varchar(255),PRIMARY KEY(id))";
-            RunQuery(Table2);
-            string Table3 = "CREATE TABLE IF NOT EXISTS courses(course_number int, name varchar(255), year varchar(255),semester varchar(255),hours int, PRIMARY KEY(course_number))";
-            RunQuery(Table3);
+            try
+            {
+                string Table1 = "CREATE TABLE IF NOT EXISTS rooms(room_number int, building varchar(255), floor int,PRIMARY KEY(room_number))";
+                RunQuery(Table1);
+                string Table2 = "CREATE TABLE IF NOT EXISTS lecturers(id int, first_name varchar(255), last_name varchar(255),phone_number varchar(255),address varchar(255),PRIMARY KEY(id))";
+                RunQuery(Table2);
+                string Table3 = "CREATE TABLE IF NOT EXISTS courses(course_number int, name varchar(255), year varchar(255),semester varchar(255),hours int, PRIMARY KEY(course_number))";
+                RunQuery(Table3);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void RunQuery(string Query)
         {
-            if (this.OpenConnection() == true)
+            try
             {
-                MySqlCommand cmd = new MySqlCommand(Query, connection);
-                if (cmd.ExecuteNonQuery() == -1)
+                if (this.OpenConnection() == true)
                 {
-                    MessageBox.Show("cmd.ExecuteNonQuery() returned -1");
+                    MySqlCommand cmd = new MySqlCommand(Query, connection);
+                    cmd.ExecuteNonQuery();
+                    this.CloseConnection();
                 }
-                
-                this.CloseConnection();
             }
+            catch (Exception ex)
+            {
+                this.CloseConnection();
+                MessageBox.Show(ex.Message); 
+            }
+            
         }
     }
 
