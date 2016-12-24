@@ -20,14 +20,15 @@ namespace YogevDbShenkar
         {
             InitializeComponent();
             DBobj = obj;
-            DBobj.fillingUp();
-            ShowTBL();
+            initDB();
         }
 
         ~dashboard()
         {
             ClearAll();
         }
+
+        
         
         private void ClassInsert_Click(object sender, EventArgs e)
         {
@@ -89,6 +90,7 @@ namespace YogevDbShenkar
             ShowTBL();
         }
 
+
         public void ShowTBL()
         {
             try
@@ -111,6 +113,13 @@ namespace YogevDbShenkar
                 {
                     dataGridView2.Rows.Add(item[0], item[1], item[2], item[3], item[4]);
                 }
+                /*net set yet*/
+                var culs4 = DBobj.selectSecondTBL("SELECT * FROM schedule;", 5);
+                dataGridView4.Rows.Clear();
+                foreach (var item in culs4)
+                {
+                    dataGridView4.Rows.Add(item[0], item[1], item[2], item[3], item[4]);
+                }
             }
             catch (Exception ex)
             {
@@ -123,9 +132,9 @@ namespace YogevDbShenkar
             DropByTbl("rooms");
             DropByTbl("courses");
             DropByTbl("lecturers");
-            DropByTbl("ff");
-            DropByTbl("ee");
-            DropByTbl("www");
+            DropByTbl("schedule");
+            DropByTbl("courses_lecturers_tbl");
+            DropByTbl("courses_room_tbl");
         }
 
         private void DropRooms_Click(object sender, EventArgs e)
@@ -211,7 +220,17 @@ namespace YogevDbShenkar
 
         private void SystemMessage_Click(object sender, EventArgs e)
         {
-            
+            ClearAll();
+        }
+
+        public void initDB()
+        {
+            DBobj.fillingUp();
+            ShowTBL();
+        }
+        private void init_Click(object sender, EventArgs e)
+        {
+            initDB();
         }
     }
 }

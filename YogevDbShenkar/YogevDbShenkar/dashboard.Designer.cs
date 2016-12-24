@@ -32,6 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.room_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.building = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,17 +87,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.ShowAll = new System.Windows.Forms.Button();
+            this.Refresh_View = new System.Windows.Forms.Button();
             this.DropRooms = new System.Windows.Forms.Button();
             this.DropCourses = new System.Windows.Forms.Button();
             this.DropLecturers = new System.Windows.Forms.Button();
             this.CreateTBLs = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scheduleLbl = new System.Windows.Forms.Label();
             this.UpdateClass = new System.Windows.Forms.Button();
             this.UpdateCourse = new System.Windows.Forms.Button();
@@ -97,6 +99,13 @@
             this.SystemMessage = new System.Windows.Forms.Button();
             this.Courses = new System.Windows.Forms.Label();
             this.LecturersLbl = new System.Windows.Forms.Label();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.CourseNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LecutreID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.init = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -107,23 +116,42 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeight = 55;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.room_number,
             this.building,
             this.floor});
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridView1.Location = new System.Drawing.Point(11, 419);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -149,26 +177,44 @@
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView2.ColumnHeadersHeight = 55;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.First_name,
             this.Last_name,
             this.phone_number,
             this.address});
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView2.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridView2.Location = new System.Drawing.Point(1345, 419);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView2.RowHeadersWidth = 25;
             this.dataGridView2.RowTemplate.Height = 40;
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -204,26 +250,44 @@
             // 
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView3.ColumnHeadersHeight = 55;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.course_number,
             this.name,
             this.year,
             this.semester,
             this.hours});
-            this.dataGridView3.GridColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridView3.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView3.GridColor = System.Drawing.SystemColors.HotTrack;
             this.dataGridView3.Location = new System.Drawing.Point(678, 419);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView3.Name = "dataGridView3";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView3.RowHeadersWidth = 25;
             this.dataGridView3.RowTemplate.Height = 40;
             this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -257,304 +321,336 @@
             // 
             // ClassInsert
             // 
-            this.ClassInsert.Location = new System.Drawing.Point(36, 366);
+            this.ClassInsert.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.ClassInsert.Location = new System.Drawing.Point(240, 366);
             this.ClassInsert.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.ClassInsert.Name = "ClassInsert";
             this.ClassInsert.Size = new System.Drawing.Size(200, 47);
             this.ClassInsert.TabIndex = 4;
             this.ClassInsert.Text = "Insert new row";
-            this.ClassInsert.UseVisualStyleBackColor = true;
+            this.ClassInsert.UseVisualStyleBackColor = false;
             this.ClassInsert.Click += new System.EventHandler(this.ClassInsert_Click);
             // 
             // ClassesLabel1
             // 
             this.ClassesLabel1.AutoSize = true;
+            this.ClassesLabel1.Font = new System.Drawing.Font("Arial", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.ClassesLabel1.ForeColor = System.Drawing.Color.Navy;
             this.ClassesLabel1.Location = new System.Drawing.Point(12, 67);
             this.ClassesLabel1.Name = "ClassesLabel1";
-            this.ClassesLabel1.Size = new System.Drawing.Size(80, 23);
+            this.ClassesLabel1.Size = new System.Drawing.Size(118, 32);
             this.ClassesLabel1.TabIndex = 5;
             this.ClassesLabel1.Text = "Classes";
             // 
             // ClassesRoomNumber
             // 
             this.ClassesRoomNumber.AutoSize = true;
-            this.ClassesRoomNumber.Location = new System.Drawing.Point(12, 140);
+            this.ClassesRoomNumber.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.ClassesRoomNumber.ForeColor = System.Drawing.Color.Navy;
+            this.ClassesRoomNumber.Location = new System.Drawing.Point(31, 140);
             this.ClassesRoomNumber.Name = "ClassesRoomNumber";
-            this.ClassesRoomNumber.Size = new System.Drawing.Size(133, 23);
+            this.ClassesRoomNumber.Size = new System.Drawing.Size(165, 27);
             this.ClassesRoomNumber.TabIndex = 6;
             this.ClassesRoomNumber.Text = "Room number";
             // 
             // ClassesBuilding
             // 
             this.ClassesBuilding.AutoSize = true;
-            this.ClassesBuilding.Location = new System.Drawing.Point(12, 176);
+            this.ClassesBuilding.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.ClassesBuilding.ForeColor = System.Drawing.Color.Navy;
+            this.ClassesBuilding.Location = new System.Drawing.Point(31, 176);
             this.ClassesBuilding.Name = "ClassesBuilding";
-            this.ClassesBuilding.Size = new System.Drawing.Size(77, 23);
+            this.ClassesBuilding.Size = new System.Drawing.Size(100, 27);
             this.ClassesBuilding.TabIndex = 7;
             this.ClassesBuilding.Text = "Building";
             // 
             // ClassesFloorNumber
             // 
             this.ClassesFloorNumber.AutoSize = true;
-            this.ClassesFloorNumber.Location = new System.Drawing.Point(12, 212);
+            this.ClassesFloorNumber.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.ClassesFloorNumber.ForeColor = System.Drawing.Color.Navy;
+            this.ClassesFloorNumber.Location = new System.Drawing.Point(31, 212);
             this.ClassesFloorNumber.Name = "ClassesFloorNumber";
-            this.ClassesFloorNumber.Size = new System.Drawing.Size(129, 23);
+            this.ClassesFloorNumber.Size = new System.Drawing.Size(160, 27);
             this.ClassesFloorNumber.TabIndex = 8;
             this.ClassesFloorNumber.Text = "Floor Number";
             // 
             // tbBuilding
             // 
-            this.tbBuilding.Location = new System.Drawing.Point(151, 169);
+            this.tbBuilding.Location = new System.Drawing.Point(240, 173);
             this.tbBuilding.Name = "tbBuilding";
-            this.tbBuilding.Size = new System.Drawing.Size(215, 30);
+            this.tbBuilding.Size = new System.Drawing.Size(200, 30);
             this.tbBuilding.TabIndex = 9;
             // 
             // tbFloorNumber
             // 
-            this.tbFloorNumber.Location = new System.Drawing.Point(151, 205);
+            this.tbFloorNumber.Location = new System.Drawing.Point(240, 209);
             this.tbFloorNumber.Name = "tbFloorNumber";
-            this.tbFloorNumber.Size = new System.Drawing.Size(215, 30);
+            this.tbFloorNumber.Size = new System.Drawing.Size(200, 30);
             this.tbFloorNumber.TabIndex = 10;
             // 
             // tbRoomNumber
             // 
-            this.tbRoomNumber.Location = new System.Drawing.Point(151, 133);
+            this.tbRoomNumber.Location = new System.Drawing.Point(240, 137);
             this.tbRoomNumber.Name = "tbRoomNumber";
-            this.tbRoomNumber.Size = new System.Drawing.Size(215, 30);
+            this.tbRoomNumber.Size = new System.Drawing.Size(200, 30);
             this.tbRoomNumber.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(674, 140);
+            this.label1.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Location = new System.Drawing.Point(701, 140);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 23);
+            this.label1.Size = new System.Drawing.Size(179, 27);
             this.label1.TabIndex = 12;
             this.label1.Text = "Course number";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(2497, 188);
+            this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 71);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "AddRows";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 49;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(674, 176);
+            this.label2.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label2.ForeColor = System.Drawing.Color.Navy;
+            this.label2.Location = new System.Drawing.Point(701, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 23);
+            this.label2.Size = new System.Drawing.Size(75, 27);
             this.label2.TabIndex = 14;
             this.label2.Text = "Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(674, 212);
+            this.label3.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label3.ForeColor = System.Drawing.Color.Navy;
+            this.label3.Location = new System.Drawing.Point(701, 212);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 23);
+            this.label3.Size = new System.Drawing.Size(60, 27);
             this.label3.TabIndex = 15;
             this.label3.Text = "Year";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(674, 248);
+            this.label4.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label4.ForeColor = System.Drawing.Color.Navy;
+            this.label4.Location = new System.Drawing.Point(701, 248);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 23);
+            this.label4.Size = new System.Drawing.Size(114, 27);
             this.label4.TabIndex = 16;
             this.label4.Text = "Semester";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(674, 284);
+            this.label5.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label5.ForeColor = System.Drawing.Color.Navy;
+            this.label5.Location = new System.Drawing.Point(701, 284);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 23);
+            this.label5.Size = new System.Drawing.Size(76, 27);
             this.label5.TabIndex = 17;
             this.label5.Text = "Hours";
             // 
             // tbCourseNumber
             // 
-            this.tbCourseNumber.Location = new System.Drawing.Point(820, 137);
+            this.tbCourseNumber.Location = new System.Drawing.Point(909, 137);
             this.tbCourseNumber.Name = "tbCourseNumber";
-            this.tbCourseNumber.Size = new System.Drawing.Size(215, 30);
+            this.tbCourseNumber.Size = new System.Drawing.Size(200, 30);
             this.tbCourseNumber.TabIndex = 18;
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(820, 173);
+            this.tbName.Location = new System.Drawing.Point(909, 173);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(215, 30);
+            this.tbName.Size = new System.Drawing.Size(200, 30);
             this.tbName.TabIndex = 19;
             // 
             // tbYear
             // 
-            this.tbYear.Location = new System.Drawing.Point(820, 209);
+            this.tbYear.Location = new System.Drawing.Point(909, 209);
             this.tbYear.Name = "tbYear";
-            this.tbYear.Size = new System.Drawing.Size(215, 30);
+            this.tbYear.Size = new System.Drawing.Size(200, 30);
             this.tbYear.TabIndex = 20;
             // 
             // tbSemester
             // 
-            this.tbSemester.Location = new System.Drawing.Point(820, 245);
+            this.tbSemester.Location = new System.Drawing.Point(909, 245);
             this.tbSemester.Name = "tbSemester";
-            this.tbSemester.Size = new System.Drawing.Size(215, 30);
+            this.tbSemester.Size = new System.Drawing.Size(200, 30);
             this.tbSemester.TabIndex = 21;
             // 
             // tbHours
             // 
-            this.tbHours.Location = new System.Drawing.Point(820, 281);
+            this.tbHours.Location = new System.Drawing.Point(909, 281);
             this.tbHours.Name = "tbHours";
-            this.tbHours.Size = new System.Drawing.Size(215, 30);
+            this.tbHours.Size = new System.Drawing.Size(200, 30);
             this.tbHours.TabIndex = 22;
             // 
             // CoursesInsert
             // 
-            this.CoursesInsert.Location = new System.Drawing.Point(705, 366);
+            this.CoursesInsert.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.CoursesInsert.Location = new System.Drawing.Point(909, 366);
             this.CoursesInsert.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CoursesInsert.Name = "CoursesInsert";
             this.CoursesInsert.Size = new System.Drawing.Size(200, 47);
             this.CoursesInsert.TabIndex = 23;
             this.CoursesInsert.Text = "Insert new row";
-            this.CoursesInsert.UseVisualStyleBackColor = true;
+            this.CoursesInsert.UseVisualStyleBackColor = false;
             this.CoursesInsert.Click += new System.EventHandler(this.CoursesInsert_Click);
             // 
             // lecturersInsert
             // 
-            this.lecturersInsert.Location = new System.Drawing.Point(1367, 366);
+            this.lecturersInsert.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.lecturersInsert.Location = new System.Drawing.Point(1571, 366);
             this.lecturersInsert.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lecturersInsert.Name = "lecturersInsert";
             this.lecturersInsert.Size = new System.Drawing.Size(200, 47);
             this.lecturersInsert.TabIndex = 34;
             this.lecturersInsert.Text = "Insert new row";
-            this.lecturersInsert.UseVisualStyleBackColor = true;
+            this.lecturersInsert.UseVisualStyleBackColor = false;
             this.lecturersInsert.Click += new System.EventHandler(this.lecturersInsert_Click);
             // 
             // tbAddress
             // 
-            this.tbAddress.Location = new System.Drawing.Point(1481, 277);
+            this.tbAddress.Location = new System.Drawing.Point(1571, 281);
             this.tbAddress.Name = "tbAddress";
-            this.tbAddress.Size = new System.Drawing.Size(215, 30);
+            this.tbAddress.Size = new System.Drawing.Size(200, 30);
             this.tbAddress.TabIndex = 33;
             // 
             // tbPhone
             // 
-            this.tbPhone.Location = new System.Drawing.Point(1481, 241);
+            this.tbPhone.Location = new System.Drawing.Point(1571, 245);
             this.tbPhone.Name = "tbPhone";
-            this.tbPhone.Size = new System.Drawing.Size(215, 30);
+            this.tbPhone.Size = new System.Drawing.Size(200, 30);
             this.tbPhone.TabIndex = 32;
             // 
             // tbLastName
             // 
-            this.tbLastName.Location = new System.Drawing.Point(1481, 205);
+            this.tbLastName.Location = new System.Drawing.Point(1571, 209);
             this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(215, 30);
+            this.tbLastName.Size = new System.Drawing.Size(200, 30);
             this.tbLastName.TabIndex = 31;
             // 
             // tbFirstName
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(1481, 169);
+            this.tbFirstName.Location = new System.Drawing.Point(1571, 173);
             this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(215, 30);
+            this.tbFirstName.Size = new System.Drawing.Size(200, 30);
             this.tbFirstName.TabIndex = 30;
             // 
             // tbID
             // 
-            this.tbID.Location = new System.Drawing.Point(1481, 133);
+            this.tbID.Location = new System.Drawing.Point(1571, 137);
             this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(215, 30);
+            this.tbID.Size = new System.Drawing.Size(200, 30);
             this.tbID.TabIndex = 29;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1341, 284);
+            this.label6.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label6.ForeColor = System.Drawing.Color.Navy;
+            this.label6.Location = new System.Drawing.Point(1364, 284);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 23);
+            this.label6.Size = new System.Drawing.Size(100, 27);
             this.label6.TabIndex = 28;
             this.label6.Text = "Address";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1341, 248);
+            this.label7.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label7.ForeColor = System.Drawing.Color.Navy;
+            this.label7.Location = new System.Drawing.Point(1364, 248);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 23);
+            this.label7.Size = new System.Drawing.Size(172, 27);
             this.label7.TabIndex = 27;
             this.label7.Text = "Phone number";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1341, 212);
+            this.label8.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label8.ForeColor = System.Drawing.Color.Navy;
+            this.label8.Location = new System.Drawing.Point(1364, 212);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 23);
+            this.label8.Size = new System.Drawing.Size(124, 27);
             this.label8.TabIndex = 26;
             this.label8.Text = "Last name";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1341, 176);
+            this.label9.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label9.ForeColor = System.Drawing.Color.Navy;
+            this.label9.Location = new System.Drawing.Point(1364, 176);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 23);
+            this.label9.Size = new System.Drawing.Size(126, 27);
             this.label9.TabIndex = 25;
             this.label9.Text = "First name";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1341, 140);
+            this.label10.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label10.ForeColor = System.Drawing.Color.Navy;
+            this.label10.Location = new System.Drawing.Point(1364, 140);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(30, 23);
+            this.label10.Size = new System.Drawing.Size(35, 27);
             this.label10.TabIndex = 24;
             this.label10.Text = "ID";
             // 
-            // ShowAll
+            // Refresh_View
             // 
-            this.ShowAll.Location = new System.Drawing.Point(2497, 260);
-            this.ShowAll.Name = "ShowAll";
-            this.ShowAll.Size = new System.Drawing.Size(178, 71);
-            this.ShowAll.TabIndex = 35;
-            this.ShowAll.Text = "Show all tables";
-            this.ShowAll.UseVisualStyleBackColor = true;
-            this.ShowAll.Click += new System.EventHandler(this.ShowAll_Click);
+            this.Refresh_View.Location = new System.Drawing.Point(2497, 260);
+            this.Refresh_View.Name = "Refresh_View";
+            this.Refresh_View.Size = new System.Drawing.Size(178, 71);
+            this.Refresh_View.TabIndex = 35;
+            this.Refresh_View.Text = "Refresh View";
+            this.Refresh_View.UseVisualStyleBackColor = true;
+            this.Refresh_View.Click += new System.EventHandler(this.ShowAll_Click);
             // 
             // DropRooms
             // 
+            this.DropRooms.BackColor = System.Drawing.Color.IndianRed;
             this.DropRooms.Location = new System.Drawing.Point(444, 366);
             this.DropRooms.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.DropRooms.Name = "DropRooms";
             this.DropRooms.Size = new System.Drawing.Size(200, 47);
             this.DropRooms.TabIndex = 36;
             this.DropRooms.Text = "Drop Table";
-            this.DropRooms.UseVisualStyleBackColor = true;
+            this.DropRooms.UseVisualStyleBackColor = false;
             this.DropRooms.Click += new System.EventHandler(this.DropRooms_Click);
             // 
             // DropCourses
             // 
+            this.DropCourses.BackColor = System.Drawing.Color.IndianRed;
             this.DropCourses.Location = new System.Drawing.Point(1113, 366);
             this.DropCourses.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.DropCourses.Name = "DropCourses";
             this.DropCourses.Size = new System.Drawing.Size(200, 47);
             this.DropCourses.TabIndex = 37;
             this.DropCourses.Text = "Drop Table";
-            this.DropCourses.UseVisualStyleBackColor = true;
+            this.DropCourses.UseVisualStyleBackColor = false;
             this.DropCourses.Click += new System.EventHandler(this.DropCourses_Click);
             // 
             // DropLecturers
             // 
+            this.DropLecturers.BackColor = System.Drawing.Color.IndianRed;
             this.DropLecturers.Location = new System.Drawing.Point(1775, 366);
             this.DropLecturers.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.DropLecturers.Name = "DropLecturers";
             this.DropLecturers.Size = new System.Drawing.Size(200, 47);
             this.DropLecturers.TabIndex = 38;
             this.DropLecturers.Text = "Drop Table";
-            this.DropLecturers.UseVisualStyleBackColor = true;
+            this.DropLecturers.UseVisualStyleBackColor = false;
             this.DropLecturers.Click += new System.EventHandler(this.DropLecturers_Click);
             // 
             // CreateTBLs
@@ -566,101 +662,51 @@
             this.CreateTBLs.Text = "CreateTBLs";
             this.CreateTBLs.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.dataGridView4.GridColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridView4.Location = new System.Drawing.Point(2012, 419);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.dataGridView4.Name = "dataGridView4";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView4.RowHeadersWidth = 25;
-            this.dataGridView4.RowTemplate.Height = 40;
-            this.dataGridView4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView4.Size = new System.Drawing.Size(663, 768);
-            this.dataGridView4.TabIndex = 40;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "First name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Last name";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Phone number";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Address";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
             // scheduleLbl
             // 
             this.scheduleLbl.AutoSize = true;
+            this.scheduleLbl.Font = new System.Drawing.Font("Arial", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.scheduleLbl.ForeColor = System.Drawing.Color.Navy;
             this.scheduleLbl.Location = new System.Drawing.Point(2008, 67);
             this.scheduleLbl.Name = "scheduleLbl";
-            this.scheduleLbl.Size = new System.Drawing.Size(90, 23);
+            this.scheduleLbl.Size = new System.Drawing.Size(137, 32);
             this.scheduleLbl.TabIndex = 41;
             this.scheduleLbl.Text = "Schedule";
             // 
             // UpdateClass
             // 
-            this.UpdateClass.Location = new System.Drawing.Point(240, 366);
+            this.UpdateClass.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.UpdateClass.Location = new System.Drawing.Point(36, 366);
             this.UpdateClass.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.UpdateClass.Name = "UpdateClass";
             this.UpdateClass.Size = new System.Drawing.Size(200, 47);
             this.UpdateClass.TabIndex = 42;
             this.UpdateClass.Text = "UpdateClass";
-            this.UpdateClass.UseVisualStyleBackColor = true;
+            this.UpdateClass.UseVisualStyleBackColor = false;
             this.UpdateClass.Click += new System.EventHandler(this.UpdateClass_Click);
             // 
             // UpdateCourse
             // 
-            this.UpdateCourse.Location = new System.Drawing.Point(909, 366);
+            this.UpdateCourse.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.UpdateCourse.Location = new System.Drawing.Point(705, 366);
             this.UpdateCourse.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.UpdateCourse.Name = "UpdateCourse";
             this.UpdateCourse.Size = new System.Drawing.Size(200, 47);
             this.UpdateCourse.TabIndex = 43;
             this.UpdateCourse.Text = "UpdateCourse";
-            this.UpdateCourse.UseVisualStyleBackColor = true;
+            this.UpdateCourse.UseVisualStyleBackColor = false;
             this.UpdateCourse.Click += new System.EventHandler(this.UpdateCourse_Click);
             // 
             // UpdateLecture
             // 
-            this.UpdateLecture.Location = new System.Drawing.Point(1571, 366);
+            this.UpdateLecture.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.UpdateLecture.Location = new System.Drawing.Point(1368, 366);
             this.UpdateLecture.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.UpdateLecture.Name = "UpdateLecture";
             this.UpdateLecture.Size = new System.Drawing.Size(200, 47);
             this.UpdateLecture.TabIndex = 44;
             this.UpdateLecture.Text = "UpdateLecture";
-            this.UpdateLecture.UseVisualStyleBackColor = true;
+            this.UpdateLecture.UseVisualStyleBackColor = false;
             this.UpdateLecture.Click += new System.EventHandler(this.UpdateLecture_Click);
             // 
             // SystemMessage
@@ -669,34 +715,124 @@
             this.SystemMessage.Name = "SystemMessage";
             this.SystemMessage.Size = new System.Drawing.Size(178, 71);
             this.SystemMessage.TabIndex = 45;
-            this.SystemMessage.Text = "System message";
+            this.SystemMessage.Text = "Delete DB";
             this.SystemMessage.UseVisualStyleBackColor = true;
             this.SystemMessage.Click += new System.EventHandler(this.SystemMessage_Click);
             // 
             // Courses
             // 
             this.Courses.AutoSize = true;
+            this.Courses.Font = new System.Drawing.Font("Arial", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Courses.ForeColor = System.Drawing.Color.Navy;
             this.Courses.Location = new System.Drawing.Point(674, 67);
             this.Courses.Name = "Courses";
-            this.Courses.Size = new System.Drawing.Size(83, 23);
+            this.Courses.Size = new System.Drawing.Size(125, 32);
             this.Courses.TabIndex = 46;
             this.Courses.Text = "Courses";
             // 
             // LecturersLbl
             // 
             this.LecturersLbl.AutoSize = true;
+            this.LecturersLbl.Font = new System.Drawing.Font("Arial", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.LecturersLbl.ForeColor = System.Drawing.Color.Navy;
             this.LecturersLbl.Location = new System.Drawing.Point(1341, 67);
             this.LecturersLbl.Name = "LecturersLbl";
-            this.LecturersLbl.Size = new System.Drawing.Size(93, 23);
+            this.LecturersLbl.Size = new System.Drawing.Size(140, 32);
             this.LecturersLbl.TabIndex = 47;
             this.LecturersLbl.Text = "Lecturers";
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridView4.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dataGridView4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridView4.ColumnHeadersHeight = 55;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CourseNumber,
+            this.LecutreID,
+            this.RoomNumber,
+            this.Day,
+            this.Hour});
+            this.dataGridView4.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView4.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridView4.GridColor = System.Drawing.SystemColors.HotTrack;
+            this.dataGridView4.Location = new System.Drawing.Point(2012, 419);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dataGridView4.Name = "dataGridView4";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridView4.RowHeadersWidth = 25;
+            this.dataGridView4.RowTemplate.Height = 40;
+            this.dataGridView4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView4.Size = new System.Drawing.Size(663, 768);
+            this.dataGridView4.TabIndex = 48;
+            // 
+            // CourseNumber
+            // 
+            this.CourseNumber.HeaderText = "Course";
+            this.CourseNumber.Name = "CourseNumber";
+            // 
+            // LecutreID
+            // 
+            this.LecutreID.HeaderText = "Lecture ID";
+            this.LecutreID.Name = "LecutreID";
+            // 
+            // RoomNumber
+            // 
+            this.RoomNumber.HeaderText = "Room";
+            this.RoomNumber.Name = "RoomNumber";
+            // 
+            // Day
+            // 
+            this.Day.HeaderText = "Day";
+            this.Day.Name = "Day";
+            // 
+            // Hour
+            // 
+            this.Hour.HeaderText = "Hour";
+            this.Hour.Name = "Hour";
+            // 
+            // init
+            // 
+            this.init.Location = new System.Drawing.Point(2497, 188);
+            this.init.Name = "init";
+            this.init.Size = new System.Drawing.Size(178, 71);
+            this.init.TabIndex = 50;
+            this.init.Text = "Init DB";
+            this.init.UseVisualStyleBackColor = true;
+            this.init.Click += new System.EventHandler(this.init_Click);
             // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(2683, 1193);
+            this.Controls.Add(this.init);
+            this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.LecturersLbl);
             this.Controls.Add(this.Courses);
             this.Controls.Add(this.SystemMessage);
@@ -704,12 +840,11 @@
             this.Controls.Add(this.UpdateCourse);
             this.Controls.Add(this.UpdateClass);
             this.Controls.Add(this.scheduleLbl);
-            this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.CreateTBLs);
             this.Controls.Add(this.DropLecturers);
             this.Controls.Add(this.DropCourses);
             this.Controls.Add(this.DropRooms);
-            this.Controls.Add(this.ShowAll);
+            this.Controls.Add(this.Refresh_View);
             this.Controls.Add(this.lecturersInsert);
             this.Controls.Add(this.tbAddress);
             this.Controls.Add(this.tbPhone);
@@ -745,6 +880,7 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -806,17 +942,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button ShowAll;
+        private System.Windows.Forms.Button Refresh_View;
         private System.Windows.Forms.Button DropRooms;
         private System.Windows.Forms.Button DropCourses;
         private System.Windows.Forms.Button DropLecturers;
         private System.Windows.Forms.Button CreateTBLs;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Label scheduleLbl;
         private System.Windows.Forms.Button UpdateClass;
         private System.Windows.Forms.Button UpdateCourse;
@@ -824,5 +954,12 @@
         private System.Windows.Forms.Button SystemMessage;
         private System.Windows.Forms.Label Courses;
         private System.Windows.Forms.Label LecturersLbl;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LecutreID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hour;
+        private System.Windows.Forms.Button init;
     }
 }
