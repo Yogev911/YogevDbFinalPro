@@ -340,7 +340,6 @@
             this.button1.TabIndex = 13;
             this.button1.Text = "AddRows";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -566,7 +565,6 @@
             this.CreateTBLs.TabIndex = 39;
             this.CreateTBLs.Text = "CreateTBLs";
             this.CreateTBLs.UseVisualStyleBackColor = true;
-            this.CreateTBLs.Click += new System.EventHandler(this.CreateTBLs_Click);
             // 
             // dataGridView4
             // 

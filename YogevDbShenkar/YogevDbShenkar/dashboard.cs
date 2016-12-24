@@ -20,19 +20,15 @@ namespace YogevDbShenkar
         {
             InitializeComponent();
             DBobj = obj;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
             DBobj.fillingUp();
+            ShowTBL();
         }
 
-        private void CreateTBLs_Click(object sender, EventArgs e)
+        ~dashboard()
         {
-            DBobj.CreateTBLs();
+            ClearAll();
         }
-
+        
         private void ClassInsert_Click(object sender, EventArgs e)
         {
             try
@@ -90,6 +86,11 @@ namespace YogevDbShenkar
 
         private void ShowAll_Click(object sender, EventArgs e)
         {
+            ShowTBL();
+        }
+
+        public void ShowTBL()
+        {
             try
             {
                 var culs1 = DBobj.selectFirstTBL("SELECT * FROM rooms;", 3);
@@ -117,35 +118,36 @@ namespace YogevDbShenkar
             }
         }
 
+        public void ClearAll()
+        {
+            DropByTbl("rooms");
+            DropByTbl("courses");
+            DropByTbl("lecturers");
+            DropByTbl("ff");
+            DropByTbl("ee");
+            DropByTbl("www");
+        }
+
         private void DropRooms_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DBobj.RunQuery("DROP TABLE rooms");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            DropByTbl("rooms");
         }
 
         private void DropCourses_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DBobj.RunQuery("DROP TABLE courses");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            DropByTbl("courses");
         }
 
         private void DropLecturers_Click(object sender, EventArgs e)
         {
+            DropByTbl("lecturers");
+        }
+
+        public void DropByTbl(string TblName)
+        {
             try
             {
-                DBobj.RunQuery("DROP TABLE lecturers");
+                DBobj.RunQuery(string.Format("DROP TABLE {0}", TblName));
             }
             catch (Exception ex)
             {
