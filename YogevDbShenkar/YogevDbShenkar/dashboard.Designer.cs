@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lable1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.room_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.building = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,21 +95,13 @@
             this.UpdateCourse = new System.Windows.Forms.Button();
             this.UpdateLecture = new System.Windows.Forms.Button();
             this.SystemMessage = new System.Windows.Forms.Button();
+            this.Courses = new System.Windows.Forms.Label();
+            this.LecturersLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lable1
-            // 
-            this.lable1.AutoSize = true;
-            this.lable1.Location = new System.Drawing.Point(620, 31);
-            this.lable1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lable1.Name = "lable1";
-            this.lable1.Size = new System.Drawing.Size(157, 23);
-            this.lable1.TabIndex = 0;
-            this.lable1.Text = "im the new form!";
             // 
             // dataGridView1
             // 
@@ -266,10 +257,10 @@
             // 
             // ClassInsert
             // 
-            this.ClassInsert.Location = new System.Drawing.Point(442, 361);
+            this.ClassInsert.Location = new System.Drawing.Point(36, 366);
             this.ClassInsert.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.ClassInsert.Name = "ClassInsert";
-            this.ClassInsert.Size = new System.Drawing.Size(150, 47);
+            this.ClassInsert.Size = new System.Drawing.Size(200, 47);
             this.ClassInsert.TabIndex = 4;
             this.ClassInsert.Text = "Insert new row";
             this.ClassInsert.UseVisualStyleBackColor = true;
@@ -343,7 +334,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(2117, 114);
+            this.button1.Location = new System.Drawing.Point(2497, 188);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(178, 71);
             this.button1.TabIndex = 13;
@@ -424,10 +415,10 @@
             // 
             // CoursesInsert
             // 
-            this.CoursesInsert.Location = new System.Drawing.Point(1100, 361);
+            this.CoursesInsert.Location = new System.Drawing.Point(705, 366);
             this.CoursesInsert.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.CoursesInsert.Name = "CoursesInsert";
-            this.CoursesInsert.Size = new System.Drawing.Size(150, 47);
+            this.CoursesInsert.Size = new System.Drawing.Size(200, 47);
             this.CoursesInsert.TabIndex = 23;
             this.CoursesInsert.Text = "Insert new row";
             this.CoursesInsert.UseVisualStyleBackColor = true;
@@ -435,10 +426,10 @@
             // 
             // lecturersInsert
             // 
-            this.lecturersInsert.Location = new System.Drawing.Point(1791, 361);
+            this.lecturersInsert.Location = new System.Drawing.Point(1367, 366);
             this.lecturersInsert.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lecturersInsert.Name = "lecturersInsert";
-            this.lecturersInsert.Size = new System.Drawing.Size(150, 47);
+            this.lecturersInsert.Size = new System.Drawing.Size(200, 47);
             this.lecturersInsert.TabIndex = 34;
             this.lecturersInsert.Text = "Insert new row";
             this.lecturersInsert.UseVisualStyleBackColor = true;
@@ -526,7 +517,7 @@
             // 
             // ShowAll
             // 
-            this.ShowAll.Location = new System.Drawing.Point(2117, 198);
+            this.ShowAll.Location = new System.Drawing.Point(2497, 260);
             this.ShowAll.Name = "ShowAll";
             this.ShowAll.Size = new System.Drawing.Size(178, 71);
             this.ShowAll.TabIndex = 35;
@@ -536,10 +527,10 @@
             // 
             // DropRooms
             // 
-            this.DropRooms.Location = new System.Drawing.Point(56, 361);
+            this.DropRooms.Location = new System.Drawing.Point(444, 366);
             this.DropRooms.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.DropRooms.Name = "DropRooms";
-            this.DropRooms.Size = new System.Drawing.Size(150, 47);
+            this.DropRooms.Size = new System.Drawing.Size(200, 47);
             this.DropRooms.TabIndex = 36;
             this.DropRooms.Text = "Drop Table";
             this.DropRooms.UseVisualStyleBackColor = true;
@@ -547,10 +538,10 @@
             // 
             // DropCourses
             // 
-            this.DropCourses.Location = new System.Drawing.Point(742, 361);
+            this.DropCourses.Location = new System.Drawing.Point(1113, 366);
             this.DropCourses.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.DropCourses.Name = "DropCourses";
-            this.DropCourses.Size = new System.Drawing.Size(150, 47);
+            this.DropCourses.Size = new System.Drawing.Size(200, 47);
             this.DropCourses.TabIndex = 37;
             this.DropCourses.Text = "Drop Table";
             this.DropCourses.UseVisualStyleBackColor = true;
@@ -558,10 +549,10 @@
             // 
             // DropLecturers
             // 
-            this.DropLecturers.Location = new System.Drawing.Point(1417, 361);
+            this.DropLecturers.Location = new System.Drawing.Point(1775, 366);
             this.DropLecturers.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.DropLecturers.Name = "DropLecturers";
-            this.DropLecturers.Size = new System.Drawing.Size(150, 47);
+            this.DropLecturers.Size = new System.Drawing.Size(200, 47);
             this.DropLecturers.TabIndex = 38;
             this.DropLecturers.Text = "Drop Table";
             this.DropLecturers.UseVisualStyleBackColor = true;
@@ -569,7 +560,7 @@
             // 
             // CreateTBLs
             // 
-            this.CreateTBLs.Location = new System.Drawing.Point(2117, 31);
+            this.CreateTBLs.Location = new System.Drawing.Point(2497, 111);
             this.CreateTBLs.Name = "CreateTBLs";
             this.CreateTBLs.Size = new System.Drawing.Size(178, 71);
             this.CreateTBLs.TabIndex = 39;
@@ -635,7 +626,7 @@
             // scheduleLbl
             // 
             this.scheduleLbl.AutoSize = true;
-            this.scheduleLbl.Location = new System.Drawing.Point(2380, 55);
+            this.scheduleLbl.Location = new System.Drawing.Point(2008, 67);
             this.scheduleLbl.Name = "scheduleLbl";
             this.scheduleLbl.Size = new System.Drawing.Size(90, 23);
             this.scheduleLbl.TabIndex = 41;
@@ -643,10 +634,10 @@
             // 
             // UpdateClass
             // 
-            this.UpdateClass.Location = new System.Drawing.Point(243, 361);
+            this.UpdateClass.Location = new System.Drawing.Point(240, 366);
             this.UpdateClass.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.UpdateClass.Name = "UpdateClass";
-            this.UpdateClass.Size = new System.Drawing.Size(150, 47);
+            this.UpdateClass.Size = new System.Drawing.Size(200, 47);
             this.UpdateClass.TabIndex = 42;
             this.UpdateClass.Text = "UpdateClass";
             this.UpdateClass.UseVisualStyleBackColor = true;
@@ -654,10 +645,10 @@
             // 
             // UpdateCourse
             // 
-            this.UpdateCourse.Location = new System.Drawing.Point(920, 361);
+            this.UpdateCourse.Location = new System.Drawing.Point(909, 366);
             this.UpdateCourse.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.UpdateCourse.Name = "UpdateCourse";
-            this.UpdateCourse.Size = new System.Drawing.Size(150, 47);
+            this.UpdateCourse.Size = new System.Drawing.Size(200, 47);
             this.UpdateCourse.TabIndex = 43;
             this.UpdateCourse.Text = "UpdateCourse";
             this.UpdateCourse.UseVisualStyleBackColor = true;
@@ -665,10 +656,10 @@
             // 
             // UpdateLecture
             // 
-            this.UpdateLecture.Location = new System.Drawing.Point(1608, 361);
+            this.UpdateLecture.Location = new System.Drawing.Point(1571, 366);
             this.UpdateLecture.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.UpdateLecture.Name = "UpdateLecture";
-            this.UpdateLecture.Size = new System.Drawing.Size(150, 47);
+            this.UpdateLecture.Size = new System.Drawing.Size(200, 47);
             this.UpdateLecture.TabIndex = 44;
             this.UpdateLecture.Text = "UpdateLecture";
             this.UpdateLecture.UseVisualStyleBackColor = true;
@@ -676,7 +667,7 @@
             // 
             // SystemMessage
             // 
-            this.SystemMessage.Location = new System.Drawing.Point(2117, 284);
+            this.SystemMessage.Location = new System.Drawing.Point(2497, 337);
             this.SystemMessage.Name = "SystemMessage";
             this.SystemMessage.Size = new System.Drawing.Size(178, 71);
             this.SystemMessage.TabIndex = 45;
@@ -684,12 +675,32 @@
             this.SystemMessage.UseVisualStyleBackColor = true;
             this.SystemMessage.Click += new System.EventHandler(this.SystemMessage_Click);
             // 
+            // Courses
+            // 
+            this.Courses.AutoSize = true;
+            this.Courses.Location = new System.Drawing.Point(674, 67);
+            this.Courses.Name = "Courses";
+            this.Courses.Size = new System.Drawing.Size(83, 23);
+            this.Courses.TabIndex = 46;
+            this.Courses.Text = "Courses";
+            // 
+            // LecturersLbl
+            // 
+            this.LecturersLbl.AutoSize = true;
+            this.LecturersLbl.Location = new System.Drawing.Point(1341, 67);
+            this.LecturersLbl.Name = "LecturersLbl";
+            this.LecturersLbl.Size = new System.Drawing.Size(93, 23);
+            this.LecturersLbl.TabIndex = 47;
+            this.LecturersLbl.Text = "Lecturers";
+            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2683, 1193);
+            this.Controls.Add(this.LecturersLbl);
+            this.Controls.Add(this.Courses);
             this.Controls.Add(this.SystemMessage);
             this.Controls.Add(this.UpdateLecture);
             this.Controls.Add(this.UpdateCourse);
@@ -735,7 +746,6 @@
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.lable1);
             this.Font = new System.Drawing.Font("Arial", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "dashboard";
@@ -751,8 +761,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lable1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
@@ -816,5 +824,7 @@
         private System.Windows.Forms.Button UpdateCourse;
         private System.Windows.Forms.Button UpdateLecture;
         private System.Windows.Forms.Button SystemMessage;
+        private System.Windows.Forms.Label Courses;
+        private System.Windows.Forms.Label LecturersLbl;
     }
 }
