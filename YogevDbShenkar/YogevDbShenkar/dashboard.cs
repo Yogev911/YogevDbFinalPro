@@ -15,6 +15,9 @@ namespace YogevDbShenkar
     public partial class dashboard : Form
     {
         DataBaseConnect DBobj = new DataBaseConnect();
+        Thread Th_Rooms;
+        Thread Th_Lec;
+        Thread Th_Day_Range;
 
         public dashboard(DataBaseConnect obj)
         {
@@ -23,13 +26,6 @@ namespace YogevDbShenkar
             initDB();
         }
 
-        ~dashboard()
-        {
-            ClearAll();
-        }
-
-        
-        
         private void ClassInsert_Click(object sender, EventArgs e)
         {
             try
@@ -89,7 +85,6 @@ namespace YogevDbShenkar
         {
             ShowTBL();
         }
-
 
         public void ShowTBL()
         {
@@ -156,7 +151,7 @@ namespace YogevDbShenkar
         {
             try
             {
-                DBobj.RunQuery(string.Format("DROP TABLE {0}", TblName));
+                DBobj.RunQuery(string.Format("TRUNCATE TABLE {0}", TblName));
             }
             catch (Exception ex)
             {
@@ -168,7 +163,7 @@ namespace YogevDbShenkar
         {
             try
             {
-                DBobj.RunQuery(string.Format("UPDATE {0} SET {1} = {2} , {3} = {4} WHERE {5} = {6}; ", "rooms", "building", string.Format("'" + tbBuilding.Text + "'"), "floor", string.Format("'" + tbFloorNumber.Text + "'"), "room_number", string.Format("'" + tbRoomNumber.Text + "'")));
+                DBobj.RunQuery(string.Format("UPDATE {0} SET {1} = {2} , {3} = {4} WHERE {5} = {6}; ", "rooms", "building", StringIt(tbBuilding.Text), "floor", StringIt(tbFloorNumber.Text), "room_number", StringIt(tbRoomNumber.Text)));
                 var culs1 = DBobj.selectFirstTBL("SELECT * FROM rooms;", 3);
                 dataGridView1.Rows.Clear();
                 foreach (var item in culs1)
@@ -180,6 +175,11 @@ namespace YogevDbShenkar
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public string StringIt(string name)
+        {
+            return string.Format("'" + name + "'");
         }
 
         private void UpdateCourse_Click(object sender, EventArgs e)
@@ -228,9 +228,101 @@ namespace YogevDbShenkar
             DBobj.fillingUp();
             ShowTBL();
         }
+
         private void init_Click(object sender, EventArgs e)
         {
             initDB();
         }
+
+        private void FindLecId_Click(object sender, EventArgs e)
+        {
+            if (Th_Lec!= null)
+            {
+                Th_Lec.Abort();
+            }
+            Th_Lec = new Thread(OpenLecWindow);
+            Th_Lec.SetApartmentState(ApartmentState.STA);
+            Th_Lec.Start();
+            
+        }
+
+        public void OpenLecWindow(object obj)
+        {
+            Application.Run(new LecWindow(DBobj,tbID.Text));
+        }
+
+        private void FindRoomNum_Click(object sender, EventArgs e)
+        {
+            if (Th_Rooms != null)
+            {
+                Th_Rooms.Abort();
+            }
+            Th_Rooms = new Thread(OpenRoomWindow);
+            Th_Rooms.SetApartmentState(ApartmentState.STA);
+            Th_Rooms.Start();
+        }
+
+        public void OpenRoomWindow(object obj)
+        {
+            Application.Run(new RoomWindow(DBobj,tbRoomNumber.Text));
+        }
+
+        private void LoadClass_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                tbRoomNumber.Text = row.Cells[0].Value.ToString();
+                tbBuilding.Text = row.Cells[1].Value.ToString();
+                tbFloorNumber.Text = row.Cells[2].Value.ToString();
+            }
+        }
+
+        private void LoadCourse_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView3.SelectedRows)
+            {
+                tbCourseNumber.Text = row.Cells[0].Value.ToString();
+                tbName.Text = row.Cells[1].Value.ToString();
+                tbYear.Text = row.Cells[2].Value.ToString();
+                tbSemester.Text = row.Cells[3].Value.ToString();
+                tbHours.Text = row.Cells[4].Value.ToString();
+            }
+        }
+
+        private void LoadLecture_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+            {
+                tbID.Text = row.Cells[0].Value.ToString();
+                tbFirstName.Text = row.Cells[1].Value.ToString();
+                tbLastName.Text = row.Cells[2].Value.ToString();
+                tbPhone.Text = row.Cells[3].Value.ToString();
+                tbAddress.Text = row.Cells[4].Value.ToString();
+            }
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                MessageBox.Show("aegegrgerg");
+                DataGridViewRow row = this.dataGridView3.Rows[e.RowIndex];
+                tbCourseNumber.Text = row.Cells[0].Value.ToString();
+                tbName.Text = row.Cells[1].Value.ToString();
+                tbYear.Text = row.Cells[2].Value.ToString();
+                tbSemester.Text = row.Cells[3].Value.ToString();
+                tbHours.Text = row.Cells[4].Value.ToString();
+            }
+                /*
+                foreach (DataGridViewRow row in dataGridView3.SelectedRows)
+                {
+                    tbCourseNumber.Text = row.Cells[0].Value.ToString();
+                    tbName.Text = row.Cells[1].Value.ToString();
+                    tbYear.Text = row.Cells[2].Value.ToString();
+                    tbSemester.Text = row.Cells[3].Value.ToString();
+                    tbHours.Text = row.Cells[4].Value.ToString();
+                }
+                */
+            }
     }
 }

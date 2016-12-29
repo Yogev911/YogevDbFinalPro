@@ -96,6 +96,33 @@ namespace YogevDbShenkar
             }
         }
 
+        
+        public List<string[]> selectRoomWindowTBL(string Query, int culs)
+        {
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(Query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                List<string[]> cul = new List<string[]>();
+                while (reader.Read())
+                {
+                    string[] Cul_add = new string[culs];
+                    Cul_add[0] = reader[0].ToString();
+                    Cul_add[1] = reader[1].ToString();
+                    cul.Add(Cul_add);
+                }
+                connection.Close();
+                return cul;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("error in bla bla" + e);
+            }
+            return null;
+        }
+
+
         public List<string[]> selectFirstTBL(string Query, int culs)
         {
             try
@@ -236,15 +263,18 @@ namespace YogevDbShenkar
                 //
                 //courses_room_tbl
                 //
-                string courses_room_tbl = "CREATE TABLE IF NOT EXISTS courses_room_tbl (room_number int, course_number varchar(255),PRIMARY KEY(room_number,course_number))";
+                string courses_room_tbl = "CREATE TABLE IF NOT EXISTS courses_room_tbl (room_number int, course_number varchar(255), day ENUM('sun','mon','tue','wed','thu','fri') , hour int,PRIMARY KEY(room_number,course_number))";
                 RunQuery(courses_room_tbl);
 
                 string[] FRoom_number = new string[10] { "62", "63", "246", "247", "2102", "2104", "2206", "2105", "2207", "2202" };
                 string[] Fcourse_number = new string[10] { "3503812", "3500165", "3503832", "3503833", "3500876", "3500836", "3503834", "3503849", "3502830", "3500815" };
+                string[] FDay = new string[10] { "sun", "wed", "tue", "fri", "mon", "sun", "sun", "mon", "wed", "thu" };
+                string[] FHour = new string[10] { "8", "12", "17", "10", "13", "15", "12", "19", "18", "11" };
+
 
                 for (i = 0; i < 10; i++)
                 {
-                    RunQuery(String.Format("INSERT INTO courses_room_tbl (room_number,course_number)VALUES ('{0}','{1}')", Convert.ToInt32(FRoom_number[i]), Fcourse_number[i]));
+                    RunQuery(String.Format("INSERT INTO courses_room_tbl (room_number,course_number,day,hour)VALUES ('{0}','{1}','{2}','{3}')", Convert.ToInt32(FRoom_number[i]), Fcourse_number[i],FDay[i],Convert.ToInt32(FHour[i])));
                 }
 
             }

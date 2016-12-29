@@ -65,7 +65,6 @@
             this.tbFloorNumber = new System.Windows.Forms.TextBox();
             this.tbRoomNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -106,6 +105,11 @@
             this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.init = new System.Windows.Forms.Button();
+            this.FindLecId = new System.Windows.Forms.Button();
+            this.FindRoomNum = new System.Windows.Forms.Button();
+            this.LoadClass = new System.Windows.Forms.Button();
+            this.LoadCourse = new System.Windows.Forms.Button();
+            this.LoadLecture = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -293,6 +297,7 @@
             this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView3.Size = new System.Drawing.Size(663, 768);
             this.dataGridView3.TabIndex = 3;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
             // course_number
             // 
@@ -406,13 +411,6 @@
             this.label1.Size = new System.Drawing.Size(179, 27);
             this.label1.TabIndex = 12;
             this.label1.Text = "Course number";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 49;
             // 
             // label2
             // 
@@ -824,6 +822,56 @@
             this.init.UseVisualStyleBackColor = true;
             this.init.Click += new System.EventHandler(this.init_Click);
             // 
+            // FindLecId
+            // 
+            this.FindLecId.Location = new System.Drawing.Point(1786, 137);
+            this.FindLecId.Name = "FindLecId";
+            this.FindLecId.Size = new System.Drawing.Size(100, 30);
+            this.FindLecId.TabIndex = 51;
+            this.FindLecId.Text = "Find";
+            this.FindLecId.UseVisualStyleBackColor = true;
+            this.FindLecId.Click += new System.EventHandler(this.FindLecId_Click);
+            // 
+            // FindRoomNum
+            // 
+            this.FindRoomNum.Location = new System.Drawing.Point(446, 138);
+            this.FindRoomNum.Name = "FindRoomNum";
+            this.FindRoomNum.Size = new System.Drawing.Size(100, 30);
+            this.FindRoomNum.TabIndex = 52;
+            this.FindRoomNum.Text = "Find";
+            this.FindRoomNum.UseVisualStyleBackColor = true;
+            this.FindRoomNum.Click += new System.EventHandler(this.FindRoomNum_Click);
+            // 
+            // LoadClass
+            // 
+            this.LoadClass.Location = new System.Drawing.Point(240, 248);
+            this.LoadClass.Name = "LoadClass";
+            this.LoadClass.Size = new System.Drawing.Size(200, 40);
+            this.LoadClass.TabIndex = 53;
+            this.LoadClass.Text = "Load Row";
+            this.LoadClass.UseVisualStyleBackColor = true;
+            this.LoadClass.Click += new System.EventHandler(this.LoadClass_Click);
+            // 
+            // LoadCourse
+            // 
+            this.LoadCourse.Location = new System.Drawing.Point(909, 317);
+            this.LoadCourse.Name = "LoadCourse";
+            this.LoadCourse.Size = new System.Drawing.Size(200, 40);
+            this.LoadCourse.TabIndex = 54;
+            this.LoadCourse.Text = "Load Row";
+            this.LoadCourse.UseVisualStyleBackColor = true;
+            this.LoadCourse.Click += new System.EventHandler(this.LoadCourse_Click);
+            // 
+            // LoadLecture
+            // 
+            this.LoadLecture.Location = new System.Drawing.Point(1571, 317);
+            this.LoadLecture.Name = "LoadLecture";
+            this.LoadLecture.Size = new System.Drawing.Size(200, 40);
+            this.LoadLecture.TabIndex = 55;
+            this.LoadLecture.Text = "Load Row";
+            this.LoadLecture.UseVisualStyleBackColor = true;
+            this.LoadLecture.Click += new System.EventHandler(this.LoadLecture_Click);
+            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
@@ -831,6 +879,11 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(2683, 1193);
+            this.Controls.Add(this.LoadLecture);
+            this.Controls.Add(this.LoadCourse);
+            this.Controls.Add(this.LoadClass);
+            this.Controls.Add(this.FindRoomNum);
+            this.Controls.Add(this.FindLecId);
             this.Controls.Add(this.init);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.LecturersLbl);
@@ -866,7 +919,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbRoomNumber);
             this.Controls.Add(this.tbFloorNumber);
@@ -920,7 +972,6 @@
         private System.Windows.Forms.TextBox tbFloorNumber;
         private System.Windows.Forms.TextBox tbRoomNumber;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -961,5 +1012,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Day;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hour;
         private System.Windows.Forms.Button init;
+        private System.Windows.Forms.Button FindLecId;
+        private System.Windows.Forms.Button FindRoomNum;
+        private System.Windows.Forms.Button LoadClass;
+        private System.Windows.Forms.Button LoadCourse;
+        private System.Windows.Forms.Button LoadLecture;
     }
 }
