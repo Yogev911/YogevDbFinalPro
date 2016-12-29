@@ -96,7 +96,6 @@ namespace YogevDbShenkar
             }
         }
 
-        
         public List<string[]> selectRoomWindowTBL(string Query, int culs)
         {
             try
@@ -121,7 +120,6 @@ namespace YogevDbShenkar
             }
             return null;
         }
-
 
         public List<string[]> selectFirstTBL(string Query, int culs)
         {
@@ -177,8 +175,6 @@ namespace YogevDbShenkar
             return null;
         }
 
-
-
         public void fillingUp()
         {
             try
@@ -189,12 +185,12 @@ namespace YogevDbShenkar
                 //
                 //rooms
                 //
-                string RoomsTBL = "CREATE TABLE IF NOT EXISTS rooms(room_number int, building varchar(255), floor int,PRIMARY KEY(room_number))";
+                    string RoomsTBL = "CREATE TABLE IF NOT EXISTS rooms(room_number int, building varchar(255), floor int,PRIMARY KEY(room_number), INDEX room_number_ind(room_number))";
                 RunQuery(RoomsTBL);
 
-                string[] ARoom_number = new string[10] { "62", "63", "246", "247", "2102", "2104", "2206", "2105", "2207", "2202" };
-                string[] ABuilding = new string[10] { "Fernik", "Fernik", "Fernik", "Fernik", "Mitchel", "Mitchel", "Mitchel", "Mitchel", "Mitchel", "Mitchel" };
-                string[] AFloor = new string[10] { "0", "2", "2", "2", "2", "2", "2", "2", "3", "3" };
+                string[] ARoom_number = new string[10] { "62", "2102", "2104", "246", "245", "204", "63", "2108", "2107", "247" };
+                string[] ABuilding = new string[10] { "Fernik", "Mitchel", "Mitchel", "Fernik", "Fernik", "Fernik", "Fernik", "Mitchel", "Mitchel", "Fernik" };
+                string[] AFloor = new string[10] { "0", "0", "2", "2", "2", "2", "2", "2", "3", "3" };
 
                 for (i = 0; i < 10; i++)
                     RunQuery(String.Format("INSERT INTO rooms (room_number,building,floor)VALUES ('{0}','{1}','{2}')", Convert.ToInt32(ARoom_number[i]), ABuilding[i], Convert.ToInt32(AFloor[i])));
@@ -202,7 +198,7 @@ namespace YogevDbShenkar
                 //
                 //lecturers
                 //
-                string LecturersTBL = "CREATE TABLE IF NOT EXISTS lecturers(id int, first_name varchar(255), last_name varchar(255),phone_number varchar(255),address varchar(255),PRIMARY KEY(id))";
+                string LecturersTBL = "CREATE TABLE IF NOT EXISTS lecturers(id int, first_name varchar(255), last_name varchar(255),phone_number varchar(255),address varchar(255),PRIMARY KEY(id) ,INDEX id_ind(id))";
                 RunQuery(LecturersTBL);
 
                 string[] Bid = new string[10] { "306488195"     , "328768195"   , "306498256"   , "303208194"   , "058489995"   , "364858195"   , "306489999"   , "389528134"   , "326598495"   , "259788192" };
@@ -217,14 +213,14 @@ namespace YogevDbShenkar
                 //
                 //courses
                 //
-                string CoursesTBL = "CREATE TABLE IF NOT EXISTS courses(course_number int, name varchar(255), year varchar(255),semester varchar(255),hours int, PRIMARY KEY(course_number))";
+                string CoursesTBL = "CREATE TABLE IF NOT EXISTS courses(course_number int, name varchar(255), year varchar(255),semester varchar(255),hours int, PRIMARY KEY(course_number) ,INDEX course_number_ind(course_number))";
                 RunQuery(CoursesTBL);
 
                 string[] Ccourse_number = new string[10] {  "3503812"   , "3500165"     , "3503832" , "3503833" , "3500876"     , "3500836"         , "3503834"         , "3503849"     , "3502830" , "3500815" };
                 string[] Cname = new string[10] {           "Automate"  , "Life Online" , "DBA"     , "OS"      , "Web Design"  , "Web Application" , "Communication1"  , "C#"          , "UNIX"    ,"HTML" };
                 string[] Cyear = new string[10] { "C", "C", "C", "C", "C", "C", "C", "B", "B", "A" };
                 string[] Csemester = new string[10] { "A", "A", "A", "A", "A", "A", "A", "C", "C", "B" };
-                string[] Chours = new string[10] { "3", "3", "3", "4", "5", "3", "3", "5", "4", "3" };
+                string[] Chours = new string[10] { "13", "14", "9", "15", "8", "17", "16", "11", "12", "10" };
 
                 for (i = 0; i < 10; i++)
                     RunQuery(String.Format("INSERT INTO courses (course_number,name,year,semester,hours)VALUES ('{0}','{1}','{2}','{3}','{4}')", Convert.ToInt32(Ccourse_number[i]), Cname[i], Cyear[i], Csemester[i], Convert.ToInt32(Chours[i])));
@@ -232,49 +228,49 @@ namespace YogevDbShenkar
                 //
                 //schedule
                 //
-                string ScheduleTBL = "CREATE TABLE IF NOT EXISTS schedule(course_number int, id varchar(255), room_number int,day varchar(255),hour int,PRIMARY KEY(course_number,id,room_number,day,hour))";
+                string ScheduleTBL = "CREATE TABLE IF NOT EXISTS schedule(course_number int, id int, room_number int,day varchar(255),hours int,PRIMARY KEY(course_number,id,room_number,day,hours),CONSTRAINT FOREIGN KEY(course_number) REFERENCES courses(course_number) ON DELETE CASCADE ON UPDATE CASCADE , CONSTRAINT FOREIGN KEY(id) REFERENCES lecturers(id) ON DELETE CASCADE ON UPDATE CASCADE , CONSTRAINT FOREIGN KEY(room_number) REFERENCES rooms(room_number) ON DELETE CASCADE ON UPDATE CASCADE)";
                 RunQuery(ScheduleTBL);
 
-                string[] Did = new string[10] { "364858195"  , "306489999"   , "328768195"   , "389528134"   , "306488195"   , "306488195"       , "326598495"       , "303208194"   , "058489995"   , "306498256" };
-                string[] Dcourse_number = new string[10] {             "3503812"   , "3500165"     , "3503832"     , "3503833"     , "3500876", "3500836", "3503834", "3503849", "3502830", "3500815" };
-                string[] Droom_number = new string[10] { "62", "63", "246", "247", "2102", "2104", "2206", "2105", "2207", "2202" };
-                string[] Dday = new string[10] { "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "wednesday", "wednesday", "monday", "friday" };
+                string[] Did = new string[10] { "306488195", "328768195", "306498256", "303208194", "058489995", "364858195", "306489999", "389528134", "326598495", "306488195" };
+                string[] Dcourse_number = new string[10] { "3500876", "3503832", "3500815", "3503849", "3502830", "3503812", "3500165", "3503833", "3503834", "3500836" };
+                string[] Droom_number = new string[10] { "62", "2102", "2104", "246", "246", "204", "63", "2104", "2104", "247" };
+                string[] Dday = new string[10] { "sum", "mon", "thu", "wen", "thu", "fri", "wen", "wen", "mon", "fri" };
                 string[] Dhour = new string[10] { "8", "9", "10", "11", "12", "13", "14", "15", "16", "17" };
 
                 for (i = 0; i < 10; i++)
                 {
-                    RunQuery(String.Format("INSERT INTO schedule (course_number,id,room_number,day,hour)VALUES ('{0}','{1}','{2}','{3}','{4}')", Convert.ToInt32(Dcourse_number[i]), Did[i], Convert.ToInt32(Droom_number[i]), Dday[i], Convert.ToInt32(Dhour[i])));
+                    RunQuery(String.Format("INSERT INTO schedule (course_number,id,room_number,day,hours)VALUES ('{0}','{1}','{2}','{3}','{4}')", Convert.ToInt32(Dcourse_number[i]), Convert.ToInt32(Did[i]), Convert.ToInt32(Droom_number[i]), Dday[i], Convert.ToInt32(Dhour[i])));
                 }
 
                 //
                 //courses_lecturers_tbl
                 //
-                string courses_lecturers_tbl = "CREATE TABLE IF NOT EXISTS courses_lecturers_tbl(id int, course_number varchar(255),PRIMARY KEY(id,course_number))";
+                string courses_lecturers_tbl = "CREATE TABLE IF NOT EXISTS courses_lecturers_tbl(id int, course_number int,CONSTRAINT FOREIGN KEY(course_number) REFERENCES courses(course_number) ON DELETE CASCADE ON UPDATE CASCADE ,CONSTRAINT FOREIGN KEY(id) REFERENCES lecturers(id) ON DELETE CASCADE ON UPDATE CASCADE )";
                 RunQuery(courses_lecturers_tbl);
 
-                string[] ElecturerID = new string[10] { "306488195", "328768195", "306498256", "303208194", "058489995", "364858195", "306489999", "389528134", "326598495", "259788192" };
-                string[] Ecourse_number = new string[10] { "3503812", "3500165", "3503832", "3503833", "3500876", "3500836", "3503834", "3503849", "3502830", "3500815" };
+                string[] ElecturerID = new string[10] { "306488195", "328768195", "306498256", "303208194", "058489995", "364858195", "306489999", "389528134", "326598495", "306488195" };
+                string[] Ecourse_number = new string[10] { "3500876", "3503832", "3500815", "3503849", "3502830", "3503812", "3500165", "3503833", "3503834", "3500836" };
 
                 for (i = 0; i < 10; i++)
                 {
-                    RunQuery(String.Format("INSERT INTO courses_lecturers_tbl(id,course_number)VALUES ('{0}','{1}')", Convert.ToInt32(ElecturerID[i]), Ecourse_number[i]));
+                    RunQuery(String.Format("INSERT INTO courses_lecturers_tbl(id,course_number)VALUES ('{0}','{1}')", Convert.ToInt32(ElecturerID[i]),Convert.ToInt32(Ecourse_number[i])));
                 }
 
                 //
                 //courses_room_tbl
                 //
-                string courses_room_tbl = "CREATE TABLE IF NOT EXISTS courses_room_tbl (room_number int, course_number varchar(255), day ENUM('sun','mon','tue','wed','thu','fri') , hour int,PRIMARY KEY(room_number,course_number))";
+                string courses_room_tbl = "CREATE TABLE IF NOT EXISTS courses_room_tbl (room_number int, course_number int, day ENUM('sun','mon','tue','wen','thu','fri') , hours int,CONSTRAINT FOREIGN KEY(course_number) REFERENCES courses(course_number) ON DELETE CASCADE ON UPDATE CASCADE ,CONSTRAINT FOREIGN KEY(room_number) REFERENCES rooms(room_number) ON DELETE CASCADE ON UPDATE CASCADE )";
                 RunQuery(courses_room_tbl);
 
-                string[] FRoom_number = new string[10] { "62", "63", "246", "247", "2102", "2104", "2206", "2105", "2207", "2202" };
-                string[] Fcourse_number = new string[10] { "3503812", "3500165", "3503832", "3503833", "3500876", "3500836", "3503834", "3503849", "3502830", "3500815" };
-                string[] FDay = new string[10] { "sun", "wed", "tue", "fri", "mon", "sun", "sun", "mon", "wed", "thu" };
-                string[] FHour = new string[10] { "8", "12", "17", "10", "13", "15", "12", "19", "18", "11" };
+                string[] FRoom_number = new string[10] { "62", "2102", "2104", "246", "246", "204", "63", "2104", "2104", "247" };
+                string[] Fcourse_number = new string[10] { "3500876", "3503832", "3500815", "3503849", "3502830", "3503812", "3500165", "3503833", "3503834", "3500836" };
+                string[] FDay = new string[10] { "sum", "mon", "thu", "wen", "thu", "fri", "wen", "wen", "mon", "fri" };
+                string[] FHour = new string[10] { "8", "9", "10", "11", "12", "13", "14", "15", "16", "17" };
 
 
                 for (i = 0; i < 10; i++)
                 {
-                    RunQuery(String.Format("INSERT INTO courses_room_tbl (room_number,course_number,day,hour)VALUES ('{0}','{1}','{2}','{3}')", Convert.ToInt32(FRoom_number[i]), Fcourse_number[i],FDay[i],Convert.ToInt32(FHour[i])));
+                    RunQuery(String.Format("INSERT INTO courses_room_tbl (room_number,course_number,day,hours)VALUES ('{0}','{1}','{2}','{3}')", Convert.ToInt32(FRoom_number[i]), Convert.ToInt32(Fcourse_number[i]),FDay[i],Convert.ToInt32(FHour[i])));
                 }
 
             }

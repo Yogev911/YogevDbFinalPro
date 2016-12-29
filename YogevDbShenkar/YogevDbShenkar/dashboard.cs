@@ -124,6 +124,7 @@ namespace YogevDbShenkar
 
         public void ClearAll()
         {
+            DBobj.RunQuery("SET FOREIGN_KEY_CHECKS = 0");
             DropByTbl("rooms");
             DropByTbl("courses");
             DropByTbl("lecturers");
@@ -134,24 +135,27 @@ namespace YogevDbShenkar
 
         private void DropRooms_Click(object sender, EventArgs e)
         {
-            DropByTbl("rooms");
+            DBobj.RunQuery(string.Format("DELETE FROM {0} WHERE {1}={2}", "rooms",tbRoomNumber.Text, "room_number"));
+            ShowTBL();
         }
 
         private void DropCourses_Click(object sender, EventArgs e)
         {
-            DropByTbl("courses");
+            DBobj.RunQuery(string.Format("DELETE FROM {0} WHERE {1}={2}", "courses", tbCourseNumber.Text, "course_number"));
+            ShowTBL();
         }
 
         private void DropLecturers_Click(object sender, EventArgs e)
         {
-            DropByTbl("lecturers");
+            DBobj.RunQuery(string.Format("DELETE FROM {0} WHERE {1}={2}", "lecturers", tbID.Text, "id"));
+            ShowTBL();
         }
 
         public void DropByTbl(string TblName)
         {
             try
             {
-                DBobj.RunQuery(string.Format("TRUNCATE TABLE {0}", TblName));
+                DBobj.RunQuery(string.Format("DROP TABLE {0}", TblName));
             }
             catch (Exception ex)
             {
@@ -267,45 +271,21 @@ namespace YogevDbShenkar
             Application.Run(new RoomWindow(DBobj,tbRoomNumber.Text));
         }
 
-        private void LoadClass_Click(object sender, EventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            if (e.RowIndex >= 0)
             {
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 tbRoomNumber.Text = row.Cells[0].Value.ToString();
                 tbBuilding.Text = row.Cells[1].Value.ToString();
                 tbFloorNumber.Text = row.Cells[2].Value.ToString();
             }
         }
 
-        private void LoadCourse_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in dataGridView3.SelectedRows)
-            {
-                tbCourseNumber.Text = row.Cells[0].Value.ToString();
-                tbName.Text = row.Cells[1].Value.ToString();
-                tbYear.Text = row.Cells[2].Value.ToString();
-                tbSemester.Text = row.Cells[3].Value.ToString();
-                tbHours.Text = row.Cells[4].Value.ToString();
-            }
-        }
-
-        private void LoadLecture_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in dataGridView2.SelectedRows)
-            {
-                tbID.Text = row.Cells[0].Value.ToString();
-                tbFirstName.Text = row.Cells[1].Value.ToString();
-                tbLastName.Text = row.Cells[2].Value.ToString();
-                tbPhone.Text = row.Cells[3].Value.ToString();
-                tbAddress.Text = row.Cells[4].Value.ToString();
-            }
-        }
-
-        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                MessageBox.Show("aegegrgerg");
                 DataGridViewRow row = this.dataGridView3.Rows[e.RowIndex];
                 tbCourseNumber.Text = row.Cells[0].Value.ToString();
                 tbName.Text = row.Cells[1].Value.ToString();
@@ -313,16 +293,20 @@ namespace YogevDbShenkar
                 tbSemester.Text = row.Cells[3].Value.ToString();
                 tbHours.Text = row.Cells[4].Value.ToString();
             }
-                /*
-                foreach (DataGridViewRow row in dataGridView3.SelectedRows)
-                {
-                    tbCourseNumber.Text = row.Cells[0].Value.ToString();
-                    tbName.Text = row.Cells[1].Value.ToString();
-                    tbYear.Text = row.Cells[2].Value.ToString();
-                    tbSemester.Text = row.Cells[3].Value.ToString();
-                    tbHours.Text = row.Cells[4].Value.ToString();
-                }
-                */
+
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridView2.Rows[e.RowIndex];
+                tbID.Text = row.Cells[0].Value.ToString();
+                tbFirstName.Text = row.Cells[1].Value.ToString();
+                tbLastName.Text = row.Cells[2].Value.ToString();
+                tbPhone.Text = row.Cells[3].Value.ToString();
+                tbAddress.Text = row.Cells[4].Value.ToString();
             }
+        }
     }
 }
