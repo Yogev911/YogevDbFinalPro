@@ -210,7 +210,7 @@ namespace YogevDbShenkar
                 RunQuery(courses_lecturers_tbl);
 
                 string[] ElecturerID = new string[10] { "22345", "22346", "22347", "22358", "18374", "22359", "33456", "33457", "33458", "33459" };
-                string[] Ecourse_number = new string[10] { "301234546", "456214046", "304812345", "304345796", "35844046", "30483953", "33456046", "304846843", "975424046", "302467846" };
+                string[] Ecourse_number = new string[10] {  };
 
                 for (i = 0; i < 10; i++)
                 {
@@ -219,6 +219,25 @@ namespace YogevDbShenkar
                 
                 FILL F TBL
                  */
+
+                /*
+              string courses_rooms_tbl = "CREATE TABLE IF NOT EXISTS courses_rooms_tbl(id int, course_number varchar(255),PRIMARY KEY(id,course_number))";
+              RunQuery(courses_rooms_tbl);
+
+              string[] ElecturerID = new string[10] { "22345", "22346", "22347", "22358", "18374", "22359", "33456", "33457", "33458", "33459" };
+              string[] BRoom_number = new string[10] { "247", "246", "204", "123", "435", "62", "345", "835", "124", "2104" };
+
+              for (i = 0; i < 10; i++)
+              {
+                  RunQuery(String.Format("INSERT INTO schedule (id,course_number)VALUES ('{0}','{1}')", ElecturerID[i], Ecourse_number[i]));
+              }
+
+              FILL F TBL
+               */
+               public void ClearAll()
+                {
+                ///
+                }
             }
             catch (Exception ex)
             {
