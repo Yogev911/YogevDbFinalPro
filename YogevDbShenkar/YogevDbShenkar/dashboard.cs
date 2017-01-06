@@ -131,6 +131,7 @@ namespace YogevDbShenkar
             DropByTbl("schedule");
             DropByTbl("courses_lecturers_tbl");
             DropByTbl("courses_room_tbl");
+            DropByTbl("lecture_tel_tbl");
         }
 
         private void DropRooms_Click(object sender, EventArgs e)

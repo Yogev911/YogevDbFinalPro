@@ -198,7 +198,7 @@ namespace YogevDbShenkar
                 //
                 //lecturers
                 //
-                string LecturersTBL = "CREATE TABLE IF NOT EXISTS lecturers(id int, first_name varchar(255), last_name varchar(255),phone_number varchar(255),address varchar(255),PRIMARY KEY(id) ,INDEX id_ind(id))";
+                string LecturersTBL = "CREATE TABLE IF NOT EXISTS lecturers(id int, first_name varchar(255), last_name varchar(255),phone_number varchar(255),address varchar(255),PRIMARY KEY(id) ,INDEX id_ind(id), INDEX phone_ind(phone_number))";
                 RunQuery(LecturersTBL);
 
                 string[] Bid = new string[10] { "306488195"     , "328768195"   , "306498256"   , "303208194"   , "058489995"   , "364858195"   , "306489999"   , "389528134"   , "326598495"   , "259788192" };
@@ -259,7 +259,7 @@ namespace YogevDbShenkar
                 //
                 //courses_room_tbl
                 //
-                string courses_room_tbl = "CREATE TABLE IF NOT EXISTS courses_room_tbl (room_number int, course_number int, day ENUM('sun','mon','tue','wen','thu','fri') , hours int,CONSTRAINT FOREIGN KEY(course_number) REFERENCES courses(course_number) ON DELETE CASCADE ON UPDATE CASCADE ,CONSTRAINT FOREIGN KEY(room_number) REFERENCES rooms(room_number) ON DELETE CASCADE ON UPDATE CASCADE )";
+                string courses_room_tbl = "CREATE TABLE IF NOT EXISTS courses_room_tbl (room_number int, course_number int, day varchar(255) , hours int,CONSTRAINT FOREIGN KEY(course_number) REFERENCES courses(course_number) ON DELETE CASCADE ON UPDATE CASCADE ,CONSTRAINT FOREIGN KEY(room_number) REFERENCES rooms(room_number) ON DELETE CASCADE ON UPDATE CASCADE )";
                 RunQuery(courses_room_tbl);
 
                 string[] FRoom_number = new string[10] { "62", "2102", "2104", "246", "246", "204", "63", "2104", "2104", "247" };
@@ -273,10 +273,39 @@ namespace YogevDbShenkar
                     RunQuery(String.Format("INSERT INTO courses_room_tbl (room_number,course_number,day,hours)VALUES ('{0}','{1}','{2}','{3}')", Convert.ToInt32(FRoom_number[i]), Convert.ToInt32(Fcourse_number[i]),FDay[i],Convert.ToInt32(FHour[i])));
                 }
 
+                //
+                //lecture_tel_tbl
+                //
+                string lecture_tel_tbl = "CREATE TABLE IF NOT EXISTS lecture_tel_tbl (id int, phone_number varchar(255), type varchar(255),PRIMARY KEY(phone_number))";
+                RunQuery(lecture_tel_tbl);
+
+                string[] Gid = new string[10] { "306488195", "328768195", "306498256", "303208194", "058489995", "364858195", "306489999", "389528134", "326598495", "306488195" };
+                string[] Gtel = new string[10] { "0501987434", "0528814634", "0508822344", "0508111234", "0528877734", "0589999834", "0508811395", "0508198734", "0529878834", "039658798" };
+                string[] Gpriotiry = new string[10] { "prim", "prim", "prim", "prim", "prim", "prim", "prim", "prim", "prim", "sec" };
+
+                for (i = 0; i < 10; i++)
+                {
+                    RunQuery(String.Format("INSERT INTO lecture_tel_tbl (id,phone_number,type)VALUES ('{0}','{1}','{2}')", Convert.ToInt32(Gid[i]), Gtel[i], Gpriotiry[i]));
+                }
+                //
+                //days_tbl
+                //
+                string days_tbl = "CREATE TABLE IF NOT EXISTS days_tbl (id int, day varchar(255))";
+                RunQuery(days_tbl);
+
+                string[] Hday = new string[6] { "sun", "mon", "tue", "wed", "thu", "fri" };
+                string[] Hid = new string[6] { "1", "2", "3", "4", "5", "6"};
+               
+                for (i = 0; i < 6; i++)
+                {
+                    RunQuery(String.Format("INSERT INTO days_tbl (id,day)VALUES ('{0}','{1}')", Convert.ToInt32(Hid[i]) , Hday[i]));
+                }
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                
             }
         }
 
