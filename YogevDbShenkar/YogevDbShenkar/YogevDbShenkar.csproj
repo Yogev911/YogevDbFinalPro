@@ -62,14 +62,29 @@
     <Compile Include="ConnectToDB.Designer.cs">
       <DependentUpon>ConnectToDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="LecWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LecWindow.Designer.cs">
+      <DependentUpon>LecWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomWindow.Designer.cs">
+      <DependentUpon>RoomWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="testing.cs" />
     <EmbeddedResource Include="ConnectToDB.resx">
       <DependentUpon>ConnectToDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LecWindow.resx">
+      <DependentUpon>LecWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,6 +95,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RoomWindow.resx">
+      <DependentUpon>RoomWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
