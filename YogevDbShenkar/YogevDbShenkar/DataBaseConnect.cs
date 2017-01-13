@@ -148,6 +148,33 @@ namespace YogevDbShenkar
             return null;
         }
 
+        public List<string[]> selectDayTBL(string Query, int culs)
+        {
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(Query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                List<string[]> cul = new List<string[]>();
+                while (reader.Read())
+                {
+                    string[] Cul_add = new string[culs];
+                    Cul_add[0] = reader[0].ToString();
+                    Cul_add[1] = reader[1].ToString();
+                    Cul_add[2] = reader[2].ToString();
+                    Cul_add[3] = reader[3].ToString();
+                    cul.Add(Cul_add);
+                }
+                connection.Close();
+                return cul;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("error in bla bla" + e);
+            }
+            return null;
+        }
+
         public List<string[]> selectSecondTBL(string Query, int culs)
         {
             try
@@ -263,7 +290,7 @@ namespace YogevDbShenkar
                 string courses_room_tbl = "CREATE TABLE IF NOT EXISTS courses_room_tbl (room_number int, course_number int, day varchar(255) , hours int,CONSTRAINT FOREIGN KEY(course_number) REFERENCES courses(course_number) ON DELETE CASCADE ON UPDATE CASCADE ,CONSTRAINT FOREIGN KEY(room_number) REFERENCES rooms(room_number) ON DELETE CASCADE ON UPDATE CASCADE )";
                 RunQuery(courses_room_tbl);
 
-                string[] FRoom_number = new string[10] { "62", "2102", "2104", "246", "246", "204", "63", "2104", "2104", "247" };
+                string[] FRoom_number = new string[10] { "62", "2102", "2104", "246", "245", "204", "63", "2108", "2107", "247" };
                 string[] Fcourse_number = new string[10] { "3500876", "3503832", "3500815", "3503849", "3502830", "3503812", "3500165", "3503833", "3503834", "3500836" };
                 string[] FDay = new string[10] { "sun", "mon", "thu", "tue", "thu", "fri", "wed", "wed", "mon", "fri" };
                 string[] FHour = new string[10] { "8", "9", "10", "11", "12", "13", "14", "15", "16", "17" };
@@ -302,17 +329,27 @@ namespace YogevDbShenkar
                     RunQuery(String.Format("INSERT INTO days_tbl (id,day)VALUES ('{0}','{1}')", Convert.ToInt32(Hid[i]) , Hday[i]));
                 }
                 //
-                //updateTimeTableClasses
+                //updateTimeTableClasses 
                 //TRIGGER
                 RunQuery("CREATE TABLE Logger (tableName VARCHAR(25),lastUpdate timestamp)");
-                RunQuery("CREATE TRIGGER courses_trigger AFTER INSERT ON courses FOR EACH ROW INSERT INTO Logger VALUES ('courses' ,DEFAULT )");
-                RunQuery("CREATE TRIGGER courses_lecturers_tbl_trigger AFTER INSERT ON courses_lecturers_tbl FOR EACH ROW INSERT INTO Logger VALUES ('courses_lecturers_tbl' ,DEFAULT )");
-                RunQuery("CREATE TRIGGER courses_room_tbl_trigger AFTER INSERT ON courses_room_tbl FOR EACH ROW INSERT INTO Logger VALUES ('courses_room_tbl' ,DEFAULT )");
-                RunQuery("CREATE TRIGGER days_tbl_trigger AFTER INSERT ON days_tbl FOR EACH ROW INSERT INTO Logger VALUES ('days_tbl' ,DEFAULT )");
-                RunQuery("CREATE TRIGGER lecturers_trigger AFTER INSERT ON lecturers FOR EACH ROW INSERT INTO Logger VALUES ('lecturers' ,DEFAULT )");
-                RunQuery("CREATE TRIGGER lecture_tel_tbl_trigger AFTER INSERT ON lecture_tel_tbl FOR EACH ROW INSERT INTO Logger VALUES ('lecture_tel_tbl' ,DEFAULT )");
-                RunQuery("CREATE TRIGGER rooms_trigger AFTER INSERT ON rooms FOR EACH ROW INSERT INTO Logger VALUES ('rooms' ,DEFAULT )");
-                RunQuery("CREATE TRIGGER schedule_trigger AFTER INSERT ON schedule FOR EACH ROW INSERT INTO Logger VALUES ('schedule' ,DEFAULT )");
+                //UPDATE TRIGGER
+                RunQuery("CREATE TRIGGER courses_trigger_UPDATE AFTER UPDATE ON courses FOR EACH ROW INSERT INTO Logger VALUES ('courses UPDATE' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER courses_lecturers_tbl_trigger_UPDATE AFTER UPDATE ON courses_lecturers_tbl FOR EACH ROW INSERT INTO Logger VALUES ('courses_lecturers_tbl UPDATE' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER courses_room_tbl_trigger_UPDATE AFTER UPDATE ON courses_room_tbl FOR EACH ROW INSERT INTO Logger VALUES ('courses_room_tbl UPDATE' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER days_tbl_trigger_UPDATE AFTER UPDATE ON days_tbl FOR EACH ROW INSERT INTO Logger VALUES ('days_tbl UPDATE' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER lecturers_trigger_UPDATE AFTER UPDATE ON lecturers FOR EACH ROW INSERT INTO Logger VALUES ('lecturers UPDATE' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER lecture_tel_tbl_trigger_UPDATE AFTER UPDATE ON lecture_tel_tbl FOR EACH ROW INSERT INTO Logger VALUES ('lecture_tel_tbl UPDATE' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER rooms_trigger_UPDATE AFTER UPDATE ON rooms FOR EACH ROW INSERT INTO Logger VALUES ('rooms UPDATE' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER schedule_trigger_UPDATE AFTER UPDATE ON schedule FOR EACH ROW INSERT INTO Logger VALUES ('schedule UPDATE' ,DEFAULT )");
+                //INSERT TRIGGER
+                RunQuery("CREATE TRIGGER courses_trigger_INSERT AFTER INSERT ON courses FOR EACH ROW INSERT INTO Logger VALUES ('courses INSERT' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER courses_lecturers_tbl_trigger_INSERT AFTER INSERT ON courses_lecturers_tbl FOR EACH ROW INSERT INTO Logger VALUES ('courses_lecturers_tbl INSERT' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER courses_room_tbl_trigger_INSERT AFTER INSERT ON courses_room_tbl FOR EACH ROW INSERT INTO Logger VALUES ('courses_room_tbl INSERT' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER days_tbl_trigger_INSERT AFTER INSERT ON days_tbl FOR EACH ROW INSERT INTO Logger VALUES ('days_tbl INSERT' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER lecturers_trigger_INSERT AFTER INSERT ON lecturers FOR EACH ROW INSERT INTO Logger VALUES ('lecturers INSERT' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER lecture_tel_tbl_trigger_INSERT AFTER INSERT ON lecture_tel_tbl FOR EACH ROW INSERT INTO Logger VALUES ('lecture_tel_tbl INSERT' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER rooms_trigger_INSERT AFTER INSERT ON rooms FOR EACH ROW INSERT INTO Logger VALUES ('rooms INSERT' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER schedule_trigger_INSERT AFTER INSERT ON schedule FOR EACH ROW INSERT INTO Logger VALUES ('schedule INSERT' ,DEFAULT )");
 
 
             }

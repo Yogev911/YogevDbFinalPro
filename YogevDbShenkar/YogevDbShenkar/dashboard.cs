@@ -83,11 +83,6 @@ namespace YogevDbShenkar
             }
         }
 
-        private void ShowAll_Click(object sender, EventArgs e)
-        {
-            ShowTBL();
-        }
-
         public void ShowTBL()
         {
             try
@@ -240,11 +235,6 @@ namespace YogevDbShenkar
             ShowTBL();
         }
 
-        private void init_Click(object sender, EventArgs e)
-        {
-            initDB();
-        }
-
         private void FindLecId_Click(object sender, EventArgs e)
         {
             if (Th_Lec!= null)
@@ -314,12 +304,6 @@ namespace YogevDbShenkar
                 tbPhone.Text = row.Cells[3].Value.ToString();
                 tbAddress.Text = row.Cells[4].Value.ToString();
             }
-        }
-
-        private void CreateTBLs_Click(object sender, EventArgs e)
-        {
-            /*THIS IS TEST ZONE */
-
         }
 
         private void SearchFind_Click(object sender, EventArgs e)

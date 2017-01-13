@@ -86,11 +86,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.Refresh_View = new System.Windows.Forms.Button();
             this.DropRooms = new System.Windows.Forms.Button();
             this.DropCourses = new System.Windows.Forms.Button();
             this.DropLecturers = new System.Windows.Forms.Button();
-            this.CreateTBLs = new System.Windows.Forms.Button();
             this.scheduleLbl = new System.Windows.Forms.Label();
             this.UpdateClass = new System.Windows.Forms.Button();
             this.UpdateCourse = new System.Windows.Forms.Button();
@@ -104,7 +102,6 @@
             this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.init = new System.Windows.Forms.Button();
             this.FindLecId = new System.Windows.Forms.Button();
             this.FindRoomNum = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -614,16 +611,6 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "ID";
             // 
-            // Refresh_View
-            // 
-            this.Refresh_View.Location = new System.Drawing.Point(2190, 28);
-            this.Refresh_View.Name = "Refresh_View";
-            this.Refresh_View.Size = new System.Drawing.Size(178, 71);
-            this.Refresh_View.TabIndex = 35;
-            this.Refresh_View.Text = "Refresh View";
-            this.Refresh_View.UseVisualStyleBackColor = true;
-            this.Refresh_View.Click += new System.EventHandler(this.ShowAll_Click);
-            // 
             // DropRooms
             // 
             this.DropRooms.BackColor = System.Drawing.Color.IndianRed;
@@ -659,16 +646,6 @@
             this.DropLecturers.Text = "Delete Row";
             this.DropLecturers.UseVisualStyleBackColor = false;
             this.DropLecturers.Click += new System.EventHandler(this.DropLecturers_Click);
-            // 
-            // CreateTBLs
-            // 
-            this.CreateTBLs.Location = new System.Drawing.Point(1571, 12);
-            this.CreateTBLs.Name = "CreateTBLs";
-            this.CreateTBLs.Size = new System.Drawing.Size(178, 71);
-            this.CreateTBLs.TabIndex = 39;
-            this.CreateTBLs.Text = "TEST";
-            this.CreateTBLs.UseVisualStyleBackColor = true;
-            this.CreateTBLs.Click += new System.EventHandler(this.CreateTBLs_Click);
             // 
             // scheduleLbl
             // 
@@ -822,16 +799,6 @@
             this.Hour.HeaderText = "Hour";
             this.Hour.Name = "Hour";
             // 
-            // init
-            // 
-            this.init.Location = new System.Drawing.Point(1775, 12);
-            this.init.Name = "init";
-            this.init.Size = new System.Drawing.Size(178, 71);
-            this.init.TabIndex = 50;
-            this.init.Text = "Init DB";
-            this.init.UseVisualStyleBackColor = true;
-            this.init.Click += new System.EventHandler(this.init_Click);
-            // 
             // FindLecId
             // 
             this.FindLecId.Location = new System.Drawing.Point(1786, 137);
@@ -899,7 +866,6 @@
             this.DayFrom.Name = "DayFrom";
             this.DayFrom.Size = new System.Drawing.Size(121, 31);
             this.DayFrom.TabIndex = 56;
-            this.DayFrom.SelectedIndex = 0;
             // 
             // DayTo
             // 
@@ -915,7 +881,6 @@
             this.DayTo.Name = "DayTo";
             this.DayTo.Size = new System.Drawing.Size(121, 31);
             this.DayTo.TabIndex = 57;
-            this.DayTo.SelectedIndex = 5;
             // 
             // label14
             // 
@@ -962,7 +927,6 @@
             this.HourTo.Name = "HourTo";
             this.HourTo.Size = new System.Drawing.Size(121, 31);
             this.HourTo.TabIndex = 60;
-            this.HourTo.SelectedIndex = 10;
             // 
             // HourFrom
             // 
@@ -987,7 +951,6 @@
             this.HourFrom.Name = "HourFrom";
             this.HourFrom.Size = new System.Drawing.Size(121, 31);
             this.HourFrom.TabIndex = 59;
-            this.HourFrom.SelectedIndex = 0;
             // 
             // SearchFind
             // 
@@ -1018,7 +981,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.FindRoomNum);
             this.Controls.Add(this.FindLecId);
-            this.Controls.Add(this.init);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.LecturersLbl);
             this.Controls.Add(this.Courses);
@@ -1027,11 +989,9 @@
             this.Controls.Add(this.UpdateCourse);
             this.Controls.Add(this.UpdateClass);
             this.Controls.Add(this.scheduleLbl);
-            this.Controls.Add(this.CreateTBLs);
             this.Controls.Add(this.DropLecturers);
             this.Controls.Add(this.DropCourses);
             this.Controls.Add(this.DropRooms);
-            this.Controls.Add(this.Refresh_View);
             this.Controls.Add(this.lecturersInsert);
             this.Controls.Add(this.tbAddress);
             this.Controls.Add(this.tbPhone);
@@ -1127,11 +1087,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button Refresh_View;
         private System.Windows.Forms.Button DropRooms;
         private System.Windows.Forms.Button DropCourses;
         private System.Windows.Forms.Button DropLecturers;
-        private System.Windows.Forms.Button CreateTBLs;
         private System.Windows.Forms.Label scheduleLbl;
         private System.Windows.Forms.Button UpdateClass;
         private System.Windows.Forms.Button UpdateCourse;
@@ -1145,7 +1103,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Day;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hour;
-        private System.Windows.Forms.Button init;
         private System.Windows.Forms.Button FindLecId;
         private System.Windows.Forms.Button FindRoomNum;
         private System.Windows.Forms.Label label11;
