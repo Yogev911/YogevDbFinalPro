@@ -15,9 +15,11 @@ namespace YogevDbShenkar
     public partial class dashboard : Form
     {
         DataBaseConnect DBobj = new DataBaseConnect();
+       // DataBaseConnect test = new DataBaseConnect2();
         Thread Th_Rooms;
         Thread Th_Lec;
         Thread Th_Day_Range;
+        int[] cb = new int[4];
 
         public dashboard(DataBaseConnect obj)
         {
@@ -90,6 +92,7 @@ namespace YogevDbShenkar
         {
             try
             {
+                DBobj.RunQuery("UPDATE lecturers le,lecture_tel_tbl tel SET le.phone_number = tel.phone_number WHERE le.id = tel.id AND tel.type = 'prim'");
                 var culs1 = DBobj.selectFirstTBL("SELECT * FROM rooms;", 3);
                 dataGridView1.Rows.Clear();
                 foreach (var item in culs1)
@@ -132,6 +135,9 @@ namespace YogevDbShenkar
             DropByTbl("courses_lecturers_tbl");
             DropByTbl("courses_room_tbl");
             DropByTbl("lecture_tel_tbl");
+            DropByTbl("days_tbl");
+            DropByTbl("logger");
+            
         }
 
         private void DropRooms_Click(object sender, EventArgs e)
@@ -307,6 +313,47 @@ namespace YogevDbShenkar
                 tbLastName.Text = row.Cells[2].Value.ToString();
                 tbPhone.Text = row.Cells[3].Value.ToString();
                 tbAddress.Text = row.Cells[4].Value.ToString();
+            }
+        }
+
+        private void CreateTBLs_Click(object sender, EventArgs e)
+        {
+            /*THIS IS TEST ZONE */
+
+        }
+
+        private void SearchFind_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cb[0] = this.DayFrom.SelectedIndex+1;
+                cb[1] = this.DayTo.SelectedIndex+1;
+                cb[2] = this.HourFrom.SelectedIndex+8;
+                cb[3] = this.HourTo.SelectedIndex+8;
+                if (Th_Day_Range != null)
+                {
+                    Th_Day_Range.Abort();
+                }
+                Th_Day_Range = new Thread(OpenDayWindow);
+                Th_Day_Range.SetApartmentState(ApartmentState.STA);
+                Th_Day_Range.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error click"+ex.Message);
+            }
+
+        }
+
+        public void OpenDayWindow(object obj)
+        {
+            try
+            {
+                Application.Run(new DayWindow(DBobj,cb));
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR!! cant create DayWindow thread " + ex.Message + "end");
             }
         }
     }

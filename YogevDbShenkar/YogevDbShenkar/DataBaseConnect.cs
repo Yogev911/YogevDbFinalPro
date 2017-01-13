@@ -20,6 +20,7 @@ namespace YogevDbShenkar
         private string password;
         public bool connected = false;
         public string select;
+        MySqlCommand cmd;
 
         public string MyServer { get { return server; } set { server = value; } }
         public string MyDatabase { get { return database; } set { database = value; } }
@@ -234,7 +235,7 @@ namespace YogevDbShenkar
                 string[] Did = new string[10] { "306488195", "328768195", "306498256", "303208194", "058489995", "364858195", "306489999", "389528134", "326598495", "306488195" };
                 string[] Dcourse_number = new string[10] { "3500876", "3503832", "3500815", "3503849", "3502830", "3503812", "3500165", "3503833", "3503834", "3500836" };
                 string[] Droom_number = new string[10] { "62", "2102", "2104", "246", "246", "204", "63", "2104", "2104", "247" };
-                string[] Dday = new string[10] { "sum", "mon", "thu", "wen", "thu", "fri", "wen", "wen", "mon", "fri" };
+                string[] Dday = new string[10] { "sun", "mon", "thu", "tue", "thu", "fri", "wed", "wed", "mon", "fri" };
                 string[] Dhour = new string[10] { "8", "9", "10", "11", "12", "13", "14", "15", "16", "17" };
 
                 for (i = 0; i < 10; i++)
@@ -264,7 +265,7 @@ namespace YogevDbShenkar
 
                 string[] FRoom_number = new string[10] { "62", "2102", "2104", "246", "246", "204", "63", "2104", "2104", "247" };
                 string[] Fcourse_number = new string[10] { "3500876", "3503832", "3500815", "3503849", "3502830", "3503812", "3500165", "3503833", "3503834", "3500836" };
-                string[] FDay = new string[10] { "sum", "mon", "thu", "wen", "thu", "fri", "wen", "wen", "mon", "fri" };
+                string[] FDay = new string[10] { "sun", "mon", "thu", "tue", "thu", "fri", "wed", "wed", "mon", "fri" };
                 string[] FHour = new string[10] { "8", "9", "10", "11", "12", "13", "14", "15", "16", "17" };
 
 
@@ -276,12 +277,12 @@ namespace YogevDbShenkar
                 //
                 //lecture_tel_tbl
                 //
-                string lecture_tel_tbl = "CREATE TABLE IF NOT EXISTS lecture_tel_tbl (id int, phone_number varchar(255), type varchar(255),PRIMARY KEY(phone_number))";
+                string lecture_tel_tbl = "CREATE TABLE IF NOT EXISTS lecture_tel_tbl (id int, phone_number varchar(255), type varchar(255),PRIMARY KEY(phone_number,type))";
                 RunQuery(lecture_tel_tbl);
 
                 string[] Gid = new string[10] { "306488195", "328768195", "306498256", "303208194", "058489995", "364858195", "306489999", "389528134", "326598495", "306488195" };
                 string[] Gtel = new string[10] { "0501987434", "0528814634", "0508822344", "0508111234", "0528877734", "0589999834", "0508811395", "0508198734", "0529878834", "039658798" };
-                string[] Gpriotiry = new string[10] { "prim", "prim", "prim", "prim", "prim", "prim", "prim", "prim", "prim", "sec" };
+                string[] Gpriotiry = new string[10] { "sec", "prim", "prim", "prim", "prim", "prim", "prim", "prim", "prim", "prim" };
 
                 for (i = 0; i < 10; i++)
                 {
@@ -300,6 +301,19 @@ namespace YogevDbShenkar
                 {
                     RunQuery(String.Format("INSERT INTO days_tbl (id,day)VALUES ('{0}','{1}')", Convert.ToInt32(Hid[i]) , Hday[i]));
                 }
+                //
+                //updateTimeTableClasses
+                //TRIGGER
+                RunQuery("CREATE TABLE Logger (tableName VARCHAR(25),lastUpdate timestamp)");
+                RunQuery("CREATE TRIGGER courses_trigger AFTER INSERT ON courses FOR EACH ROW INSERT INTO Logger VALUES ('courses' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER courses_lecturers_tbl_trigger AFTER INSERT ON courses_lecturers_tbl FOR EACH ROW INSERT INTO Logger VALUES ('courses_lecturers_tbl' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER courses_room_tbl_trigger AFTER INSERT ON courses_room_tbl FOR EACH ROW INSERT INTO Logger VALUES ('courses_room_tbl' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER days_tbl_trigger AFTER INSERT ON days_tbl FOR EACH ROW INSERT INTO Logger VALUES ('days_tbl' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER lecturers_trigger AFTER INSERT ON lecturers FOR EACH ROW INSERT INTO Logger VALUES ('lecturers' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER lecture_tel_tbl_trigger AFTER INSERT ON lecture_tel_tbl FOR EACH ROW INSERT INTO Logger VALUES ('lecture_tel_tbl' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER rooms_trigger AFTER INSERT ON rooms FOR EACH ROW INSERT INTO Logger VALUES ('rooms' ,DEFAULT )");
+                RunQuery("CREATE TRIGGER schedule_trigger AFTER INSERT ON schedule FOR EACH ROW INSERT INTO Logger VALUES ('schedule' ,DEFAULT )");
+
 
             }
             catch (Exception ex)
@@ -329,16 +343,27 @@ namespace YogevDbShenkar
             {
                 if (this.OpenConnection() == true)
                 {
-                    MySqlCommand cmd = new MySqlCommand(Query, connection);
+                    this.cmd = new MySqlCommand(Query, connection);
+                    
                     cmd.ExecuteNonQuery();
                     this.CloseConnection();
                 }
             }
             catch (Exception ex)
             {
+                try
+                {
+                    cmd.Transaction.Rollback();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("rollback" + ex.Message);
+                    this.CloseConnection();
+                }
                 this.CloseConnection();
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("no rollback"+ex.Message);
             }
+
 
         }
     }

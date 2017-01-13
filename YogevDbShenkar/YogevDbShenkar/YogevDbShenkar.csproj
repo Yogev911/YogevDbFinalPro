@@ -62,6 +62,12 @@
     <Compile Include="ConnectToDB.Designer.cs">
       <DependentUpon>ConnectToDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="DayWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayWindow.Designer.cs">
+      <DependentUpon>DayWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="LecWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayWindow.resx">
+      <DependentUpon>DayWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LecWindow.resx">
       <DependentUpon>LecWindow.cs</DependentUpon>
