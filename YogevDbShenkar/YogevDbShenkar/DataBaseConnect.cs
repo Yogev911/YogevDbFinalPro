@@ -26,6 +26,7 @@ namespace YogevDbShenkar
         public string MyDatabase { get { return database; } set { database = value; } }
         public string MyUidr { get { return uid; } set { uid = value; } }
         public string MyPassword { get { return password; } set { password = value; } }
+        public MySqlCommand Mycmd { get { return cmd; } set { cmd = value; } }
 
         //Constructor
         public DataBaseConnect()
@@ -51,6 +52,7 @@ namespace YogevDbShenkar
                 connection = new MySqlConnection(connectionString);
                 connected = true;
                 MessageBox.Show("connected!");
+                //OpenConnection();
                 //MessageBox.Show("SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";");
             }
         }
@@ -220,8 +222,19 @@ namespace YogevDbShenkar
                 string[] ABuilding = new string[10] { "Fernik", "Mitchel", "Mitchel", "Fernik", "Fernik", "Fernik", "Fernik", "Mitchel", "Mitchel", "Fernik" };
                 string[] AFloor = new string[10] { "0", "0", "2", "2", "2", "2", "2", "2", "3", "3" };
 
+                string transaction = "START TRANSACTION;";
                 for (i = 0; i < 10; i++)
-                    RunQuery(String.Format("INSERT INTO rooms (room_number,building,floor)VALUES ('{0}','{1}','{2}')", Convert.ToInt32(ARoom_number[i]), ABuilding[i], Convert.ToInt32(AFloor[i])));
+                    transaction += String.Format("INSERT INTO rooms (room_number,building,floor)VALUES ('{0}','{1}','{2}');", Convert.ToInt32(ARoom_number[i]), ABuilding[i], Convert.ToInt32(AFloor[i]));
+                transaction += "commit;";
+                try
+                {
+                    RunQuery(transaction);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("transation failed Rooms" + ex.Message);
+                }
 
                 //
                 //lecturers
@@ -374,35 +387,48 @@ namespace YogevDbShenkar
             }
         }
 
-        public void RunQuery(string Query)
+        public void RunQuery(string Query) 
         {
             try
             {
                 if (this.OpenConnection() == true)
                 {
                     this.cmd = new MySqlCommand(Query, connection);
-                    
+                    //                    this.cmd.Parameters.AddWithValue("@val1",blabla.text)
+
                     cmd.ExecuteNonQuery();
                     this.CloseConnection();
                 }
+
             }
             catch (Exception ex)
             {
-                try
+                this.CloseConnection();
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void RunQuery2(MySqlCommand temp)
+        {
+            try
+            {
+                if (this.OpenConnection() == true)
                 {
-                    cmd.Transaction.Rollback();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("rollback" + ex.Message);
+                    //this.cmd = new MySqlCommand(Query, connection);
+                    //                    this.cmd.Parameters.AddWithValue("@val1",blabla.text)
+
+                    temp.ExecuteNonQuery();
                     this.CloseConnection();
                 }
-                this.CloseConnection();
-                MessageBox.Show("no rollback"+ex.Message);
+
             }
-
-
+            catch (Exception ex)
+            {
+                this.CloseConnection();
+                MessageBox.Show(ex.Message);
+            }
         }
+
     }
 
 }

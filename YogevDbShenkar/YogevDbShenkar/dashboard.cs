@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using MySql.Data.MySqlClient;
+
 
 
 namespace YogevDbShenkar
@@ -19,6 +21,7 @@ namespace YogevDbShenkar
         Thread Th_Rooms;
         Thread Th_Lec;
         Thread Th_Day_Range;
+        Thread Th_pre;
         int[] cb = new int[4];
 
         public dashboard(DataBaseConnect obj)
@@ -132,7 +135,7 @@ namespace YogevDbShenkar
             DropByTbl("lecture_tel_tbl");
             DropByTbl("days_tbl");
             DropByTbl("logger");
-            
+            DBobj.CloseConnection();
         }
 
         private void DropRooms_Click(object sender, EventArgs e)
@@ -338,6 +341,43 @@ namespace YogevDbShenkar
             catch (Exception ex)
             {
                 MessageBox.Show("ERROR!! cant create DayWindow thread " + ex.Message + "end");
+            }
+        }
+
+        private void dashboard_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("byeeeeeeeeeeee");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (DBobj.OpenConnection() == true)
+                {
+                    string Q = "INSERT INTO rooms (room_number,building,floor)VALUES (@val1,@val2,@val3)";
+
+                    MySqlCommand tmp = new MySqlCommand(Q, DBobj.connection);
+                    tmp.Parameters.AddWithValue("@val1", tbRoomNumber.Text);
+                    tmp.Parameters.AddWithValue("@val2", tbBuilding.Text);
+                    tmp.Parameters.AddWithValue("@val3", tbFloorNumber.Text);
+                    tmp.Prepare();
+                    tmp.ExecuteNonQuery();
+                    DBobj.CloseConnection();
+
+                    var culs = DBobj.selectFirstTBL("SELECT * FROM rooms;", 3);
+                    dataGridView1.Rows.Clear();
+                    foreach (var item in culs)
+                    {
+                        dataGridView1.Rows.Add(item[0], item[1], item[2]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DBobj.CloseConnection();
+                MessageBox.Show(ex.Message);
             }
         }
     }
