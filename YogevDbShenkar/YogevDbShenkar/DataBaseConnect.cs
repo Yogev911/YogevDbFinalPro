@@ -233,6 +233,7 @@ namespace YogevDbShenkar
                 }
                 catch (Exception ex)
                 {
+                    cmd.Transaction.Rollback();
                     MessageBox.Show("transation failed Rooms" + ex.Message);
                 }
 
@@ -394,8 +395,6 @@ namespace YogevDbShenkar
                 if (this.OpenConnection() == true)
                 {
                     this.cmd = new MySqlCommand(Query, connection);
-                    //                    this.cmd.Parameters.AddWithValue("@val1",blabla.text)
-
                     cmd.ExecuteNonQuery();
                     this.CloseConnection();
                 }
@@ -414,13 +413,9 @@ namespace YogevDbShenkar
             {
                 if (this.OpenConnection() == true)
                 {
-                    //this.cmd = new MySqlCommand(Query, connection);
-                    //                    this.cmd.Parameters.AddWithValue("@val1",blabla.text)
-
                     temp.ExecuteNonQuery();
                     this.CloseConnection();
                 }
-
             }
             catch (Exception ex)
             {

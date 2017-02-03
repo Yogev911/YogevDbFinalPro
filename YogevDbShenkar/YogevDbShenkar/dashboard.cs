@@ -17,11 +17,9 @@ namespace YogevDbShenkar
     public partial class dashboard : Form
     {
         DataBaseConnect DBobj = new DataBaseConnect();
-       // DataBaseConnect test = new DataBaseConnect2();
         Thread Th_Rooms;
         Thread Th_Lec;
         Thread Th_Day_Range;
-        Thread Th_pre;
         int[] cb = new int[4];
 
         public dashboard(DataBaseConnect obj)
@@ -135,7 +133,7 @@ namespace YogevDbShenkar
             DropByTbl("lecture_tel_tbl");
             DropByTbl("days_tbl");
             DropByTbl("logger");
-            DBobj.CloseConnection();
+            //DBobj.CloseConnection();
         }
 
         private void DropRooms_Click(object sender, EventArgs e)
@@ -346,7 +344,7 @@ namespace YogevDbShenkar
 
         private void dashboard_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("byeeeeeeeeeeee");
+            MessageBox.Show("Done setting DB!");
         }
 
         private void button1_Click(object sender, EventArgs e)
