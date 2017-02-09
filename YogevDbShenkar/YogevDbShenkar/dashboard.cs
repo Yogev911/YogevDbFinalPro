@@ -70,12 +70,13 @@ namespace YogevDbShenkar
         {
             try
             {
-                DBobj.RunQuery(String.Format("INSERT INTO lecturers (id, first_name, last_name,phone_number,address)VALUES ('{0}','{1}','{2}','{3}','{4}')", tbID.Text, tbFirstName.Text, tbLastName.Text, tbPhone.Text, tbAddress.Text));
-                var culs = DBobj.selectSecondTBL("SELECT * FROM lecturers;", 5);
+                int TempAge = 2017 - ((int)this.DateYear.SelectedIndex + 1930);
+                DBobj.RunQuery(String.Format("INSERT INTO lecturers (id, first_name, last_name,phone_number,address,age)VALUES ('{0}','{1}','{2}','{3}','{4}','{5}')", tbID.Text, tbFirstName.Text, tbLastName.Text, tbPhone.Text, tbAddress.Text ,TempAge.ToString()));
+                var culs = DBobj.selectlec("SELECT * FROM lecturers;", 6);
                 dataGridView2.Rows.Clear();
                 foreach (var item in culs)
                 {
-                    dataGridView2.Rows.Add(item[0], item[1], item[2], item[3], item[4]);
+                    dataGridView2.Rows.Add(item[0], item[1], item[2], item[3], item[4], item[5]);
                 }
             }
             catch (Exception ex)
@@ -101,11 +102,11 @@ namespace YogevDbShenkar
                 {
                     dataGridView3.Rows.Add(item[0], item[1], item[2], item[3], item[4]);
                 }
-                var culs3 = DBobj.selectSecondTBL("SELECT * FROM lecturers;", 5);
+                var culs3 = DBobj.selectlec("SELECT * FROM lecturers;", 6);
                 dataGridView2.Rows.Clear();
                 foreach (var item in culs3)
                 {
-                    dataGridView2.Rows.Add(item[0], item[1], item[2], item[3], item[4]);
+                    dataGridView2.Rows.Add(item[0], item[1], item[2], item[3], item[4], item[5]);
                 }
                 /*net set yet*/
                 var culs4 = DBobj.selectSecondTBL("SELECT * FROM schedule;", 5);
@@ -211,12 +212,14 @@ namespace YogevDbShenkar
         {
             try
             {
-                DBobj.RunQuery(string.Format("UPDATE {0} SET {1} = {2} , {3} = {4} ,{5} = {6} ,{7} = {8} WHERE {9}={10}; ", "lecturers", "first_name", string.Format("'" + tbFirstName.Text + "'"), "last_name", string.Format("'" + tbLastName.Text + "'"), "phone_number", string.Format("'" + tbPhone.Text + "'"), "address", string.Format("'" + tbAddress.Text + "'"), "id", string.Format("'" + tbID.Text + "'")));
-                var culs3 = DBobj.selectSecondTBL("SELECT * FROM lecturers;", 5);
+                int TempAge = 2017 - ((int)this.DateYear.SelectedIndex + 1930);
+                string age = TempAge.ToString();
+                DBobj.RunQuery(string.Format("UPDATE {0} SET {1} = {2} , {3} = {4} ,{5} = {6} ,{7} = {8} , {11} = {12} WHERE {9}={10}; ", "lecturers", "first_name", string.Format("'" + tbFirstName.Text + "'"), "last_name", string.Format("'" + tbLastName.Text + "'"), "phone_number", string.Format("'" + tbPhone.Text + "'"), "address", string.Format("'" + tbAddress.Text + "'"), "id", string.Format("'" + tbID.Text + "'") ,"age", string.Format("'" + age + "'")));
+                var culs3 = DBobj.selectlec("SELECT * FROM lecturers;", 6);
                 dataGridView2.Rows.Clear();
                 foreach (var item in culs3)
                 {
-                    dataGridView2.Rows.Add(item[0], item[1], item[2], item[3], item[4]);
+                    dataGridView2.Rows.Add(item[0], item[1], item[2], item[3], item[4], item[5]);
                 }
             }
             catch (Exception ex)

@@ -205,6 +205,36 @@ namespace YogevDbShenkar
             return null;
         }
 
+        public List<string[]> selectlec(string Query, int culs)
+        {
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(Query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                List<string[]> cul = new List<string[]>();
+                while (reader.Read())
+                {
+                    string[] Cul_add = new string[culs];
+                    Cul_add[0] = reader[0].ToString();
+                    Cul_add[1] = reader[1].ToString();
+                    Cul_add[2] = reader[2].ToString();
+                    Cul_add[3] = reader[3].ToString();
+                    Cul_add[4] = reader[4].ToString();
+                    Cul_add[5] = reader[5].ToString();
+                    cul.Add(Cul_add);
+                }
+                connection.Close();
+                return cul;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("error in bla bla" + e);
+            }
+            return null;
+        }
+
+
         public void fillingUp()
         {
             try
@@ -240,7 +270,7 @@ namespace YogevDbShenkar
                 //
                 //lecturers
                 //
-                string LecturersTBL = "CREATE TABLE IF NOT EXISTS lecturers(id int, first_name varchar(255), last_name varchar(255),phone_number varchar(255),address varchar(255),PRIMARY KEY(id) ,INDEX id_ind(id), INDEX phone_ind(phone_number))";
+                string LecturersTBL = "CREATE TABLE IF NOT EXISTS lecturers(id int, first_name varchar(255), last_name varchar(255),phone_number varchar(255),address varchar(255),age int,PRIMARY KEY(id) ,INDEX id_ind(id), INDEX phone_ind(phone_number))";
                 RunQuery(LecturersTBL);
 
                 string[] Bid = new string[10] { "306488195"     , "328768195"   , "306498256"   , "303208194"   , "058489995"   , "364858195"   , "306489999"   , "389528134"   , "326598495"   , "259788192" };
@@ -248,9 +278,10 @@ namespace YogevDbShenkar
                 string[] Blast_name = new string[10] { "Rusho", "Meged", "HItner", "Michael", "Zainderberg", "Levinshtain", "Hasin", "Gruengard", "Nudler", "Shichman" };
                 string[] Bphone_number = new string[10] { "0501987434", "0528814634", "0508822344", "0508111234", "0528877734", "0589999834", "0508811395", "0508198734", "0529878834", "0545818834" };
                 string[] Baddress = new string[10] { "Tel Aviv", "Rishon Le Zion", "Rehovot", "Holon", "Beer Yaakov", "Jaffa", "Bat Yam", "Hifa", "Ramle", "Ramat Hasharon" };
+                string[] Bage = new string[10] { "55", "44", "43", "53", "43", "46", "46", "47", "53", "42" };
 
                 for (i = 0; i < 10; i++)
-                    RunQuery(String.Format("INSERT INTO lecturers (id, first_name, last_name,phone_number,address)VALUES ('{0}','{1}','{2}','{3}','{4}')", Convert.ToInt32(Bid[i]), Bfirst_name[i], Blast_name[i], Bphone_number[i], Baddress[i]));
+                    RunQuery(String.Format("INSERT INTO lecturers (id, first_name, last_name,phone_number,address, age)VALUES ('{0}','{1}','{2}','{3}','{4}','{5}')", Convert.ToInt32(Bid[i]), Bfirst_name[i], Blast_name[i], Bphone_number[i], Baddress[i], Bage[i]));
 
                 //
                 //courses

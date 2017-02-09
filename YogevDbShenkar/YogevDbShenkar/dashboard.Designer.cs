@@ -45,11 +45,6 @@
             this.building = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.floor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.First_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.course_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,6 +114,12 @@
             this.DateDay = new System.Windows.Forms.ComboBox();
             this.DateMonth = new System.Windows.Forms.ComboBox();
             this.DateYear = new System.Windows.Forms.ComboBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.First_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Last_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -207,7 +208,8 @@
             this.First_name,
             this.Last_name,
             this.phone_number,
-            this.address});
+            this.address,
+            this.age});
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro;
@@ -235,31 +237,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(663, 768);
             this.dataGridView2.TabIndex = 2;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // First_name
-            // 
-            this.First_name.HeaderText = "First name";
-            this.First_name.Name = "First_name";
-            // 
-            // Last_name
-            // 
-            this.Last_name.HeaderText = "Last name";
-            this.Last_name.Name = "Last_name";
-            // 
-            // phone_number
-            // 
-            this.phone_number.HeaderText = "Phone number";
-            this.phone_number.Name = "phone_number";
-            // 
-            // address
-            // 
-            this.address.HeaderText = "Address";
-            this.address.Name = "address";
             // 
             // dataGridView3
             // 
@@ -1124,6 +1101,36 @@
             this.DateYear.Size = new System.Drawing.Size(120, 31);
             this.DateYear.TabIndex = 67;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // First_name
+            // 
+            this.First_name.HeaderText = "First name";
+            this.First_name.Name = "First_name";
+            // 
+            // Last_name
+            // 
+            this.Last_name.HeaderText = "Last name";
+            this.Last_name.Name = "Last_name";
+            // 
+            // phone_number
+            // 
+            this.phone_number.HeaderText = "Phone number";
+            this.phone_number.Name = "phone_number";
+            // 
+            // address
+            // 
+            this.address.HeaderText = "Address";
+            this.address.Name = "address";
+            // 
+            // age
+            // 
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
+            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(240F, 240F);
@@ -1211,11 +1218,6 @@
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn First_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Last_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone_number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn course_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
@@ -1288,5 +1290,11 @@
         private System.Windows.Forms.ComboBox DateDay;
         private System.Windows.Forms.ComboBox DateMonth;
         private System.Windows.Forms.ComboBox DateYear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn First_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Last_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone_number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn age;
     }
 }

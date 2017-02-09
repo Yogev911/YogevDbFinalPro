@@ -30,12 +30,12 @@ namespace YogevDbShenkar
         private void button1_Click(object sender, EventArgs e)
         {
             /*FOR DEV ONLY! */
-            /*
+            
             Server.Text = "localhost";
             Database.Text = "yogev2";
             ID.Text = "root";
             password.Text = "1111";
-            */
+            
 
             DBobj.MyServer = Server.Text;
             DBobj.MyDatabase = Database.Text;
